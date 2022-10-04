@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">OWFM</string>
+    <string name="home">Home</string>
+    <string name="remedy_settings">Remedy Settings</string>
+    <string name="application_settings">Application Settings</string>
+    <string name="sync_scanner_values">Sync Scanner Values</string>
+    <string name="sync_work_order_values">Sync Work Order Values</string>
+    <string name="app_logs">App Logs</string>
+    <string name="network">Network:</string>
+    <string name="version_1_0_1">Version 1.0.1</string>
+    <string name="add_order">Add order</string>
+    <string name="summary">summary</string>
+</resources>
