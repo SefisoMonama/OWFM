@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tool="http://schemas.android.com/apk/res-auto">
+
+    <item
+        tool:showAsAction="ifRoom"
+        android:id="@+id/audit_item"
+        android:icon="@drawable/owfm_tools"
+        android:title="Audit" />
+
+
+    <item
+        android:id="@+id/breakFix_item"
+        android:icon="@drawable/owfm_tools"
+        android:title="Break Fix" />
+
+    <item
+        android:id="@+id/breakReplace_item"
+        android:icon="@drawable/owfm_tools"
+        android:title="Break Replace" />
+
+    <item
+        android:id="@+id/change_item"
+        android:icon="@drawable/owfm_tools"
+        android:title="Change" />
+
+    <item
+        android:id="@+id/dispose_item"
+        android:icon="@drawable/owfm_tools"
+        android:title="Dispose" />
+
+    <item
+        android:id="@+id/goodsReceived_item"
+        android:icon="@drawable/owfm_tools"
+        android:title="Goods Received" />
+
+    <item
+        android:id="@+id/move_item"
+        android:icon="@drawable/owfm_tools"
+        android:title="Move" />
+
+    <item
+        android:id="@+id/ReturnLoan_item"
+        android:icon="@drawable/owfm_tools"
+        android:title="Return/Loan" />
+
+
+
+
+
+</menu>
