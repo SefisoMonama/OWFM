@@ -9,12 +9,12 @@
     tools:context=".HomeScreenFragment">
 
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/sideDrawer_navigationView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:id="@+id/sideDrawer_navigationView"
         app:headerLayout="@layout/sidedrawer_header"
-        app:menu="@menu/side_drawer"/>
+        app:menu="@menu/side_drawer" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -42,13 +42,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
-            android:paddingEnd="8dp"
+            android:background="@drawable/btn_round_corners_shape"
             android:elevation="8dp"
             android:paddingStart="8dp"
+            android:paddingEnd="8dp"
             android:text="Casper Cloete"
             android:textAlignment="center"
             android:textSize="18sp"
-            android:background="@drawable/btn_round_corners_shape"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/home_toolbar" />
@@ -229,16 +229,16 @@
             app:layout_constraintTop_toBottomOf="@id/workOder_textView">
 
             <!-- Table heading -->
-            <TableRow >
+            <TableRow>
 
                 <TextView
                     android:id="@+id/workOrderHead_tableHeading"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
+                    android:background="@drawable/tableborder_shape"
                     android:gravity="center_horizontal"
                     android:padding="10dp"
-                    android:background="@drawable/tableborder_shape"
                     android:text="WORK ORDER"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
@@ -271,36 +271,65 @@
             <!-- Table data -->
             <TableRow android:id="@+id/table_data">
 
-                <TextView
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer"
+                    android:layout_weight="12"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:drawableStart="@drawable/icons8_tools_18"
-                    android:gravity="center_horizontal"
-                    android:padding="10dp"
-                    android:text="WO27507"
-                    android:textColor="@color/black"/>
+                    android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10dp"
-                    android:maxEms="10"
-                    android:text="Connection testing"
-                    android:textColor="@color/black"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical" />
 
-                <TextView
-                    android:id="@+id/status"
+                    <include layout="@layout/work_order_details_placeholder">
+
+                    </include>
+
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
+            </TableRow>
+
+            <!-- Table data -->
+            <TableRow android:id="@+id/table_data2">
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer2"
+                    android:layout_weight="12"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center_horizontal"
-                    android:padding="10dp"
-                    android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
-                    android:text="@string/summary"
-                    android:textColor="@color/black"/>
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical" />
+
+                    <include layout="@layout/work_order_details_placeholder">
+
+                    </include>
+
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
+            </TableRow>
+            <TableRow android:id="@+id/table_data3">
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer3"
+                    android:layout_weight="12"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical" />
+
+                    <include layout="@layout/work_order_details_placeholder">
+
+                    </include>
+
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
             </TableRow>
         </TableLayout>
 
@@ -312,7 +341,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="200dp"
-            android:background="@color/lightGrey"
+            android:background="@color/black"
             android:orientation="horizontal"
             app:flow_verticalBias="0.7"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -389,6 +418,5 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/network_linearlayout"
             app:layout_constraintTop_toTopOf="@+id/network_linearlayout" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

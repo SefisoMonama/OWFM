@@ -3,6 +3,7 @@ package com.example.owfm;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,9 +27,21 @@ public class SplashScreenFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentSplashScreenBinding.inflate(getLayoutInflater());
-        //setupUi();
+        setupUi();
         return binding.getRoot();
     }
 
+    private void setupUi(){
+        //navigate to home screen
+        getFragmentManager().beginTransaction().replace(R.id.splashScreenFragment, new Fragment()).commit();
 
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                assert getFragmentManager() != null;
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.splashScreenFragment, new HomeScreenFragment()).commit();
+            }
+        };
+    }
 }

@@ -9,14 +9,27 @@
         android:id="@+id/homeScreenFragment"
         android:name="com.example.owfm.HomeScreenFragment"
         android:label="fragment_home_screen"
-        tools:layout="@layout/fragment_home_screen" />
+        tools:layout="@layout/fragment_home_screen">
+        <action
+            android:id="@+id/action_homeScreenFragment_to_newWorkOrderFragment"
+            app:destination="@id/newWorkOrderFragment" />
+    </fragment>
     <fragment
         android:id="@+id/splashScreenFragment"
         android:name="com.example.owfm.SplashScreenFragment"
         android:label="fragment_splash_screen"
-        tools:layout="@layout/fragment_splash_screen" >
+        tools:layout="@layout/fragment_splash_screen">
         <action
             android:id="@+id/action_splashScreenFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newWorkOrderFragment"
+        android:name="com.example.owfm.NewWorkOrderFragment"
+        android:label="fragment_new_work_order"
+        tools:layout="@layout/fragment_new_work_order" >
+        <action
+            android:id="@+id/action_newWorkOrderFragment_to_homeScreenFragment"
             app:destination="@id/homeScreenFragment" />
     </fragment>
 </navigation>
