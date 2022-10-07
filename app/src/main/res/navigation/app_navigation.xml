@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_navigation"
-    app:startDestination="@id/splashScreenFragment">
+    app:startDestination="@id/homeScreenFragment">
 
     <fragment
         android:id="@+id/homeScreenFragment"
@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeScreenFragment_to_newWorkOrderFragment"
             app:destination="@id/newWorkOrderFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_remedySettingsFragment"
+            app:destination="@id/remedySettingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/splashScreenFragment"
@@ -30,6 +33,15 @@
         tools:layout="@layout/fragment_new_work_order" >
         <action
             android:id="@+id/action_newWorkOrderFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/remedySettingsFragment"
+        android:name="com.example.owfm.RemedySettingsFragment"
+        android:label="fragment_remedy_settings"
+        tools:layout="@layout/fragment_remedy_settings" >
+        <action
+            android:id="@+id/action_remedySettingsFragment_to_homeScreenFragment"
             app:destination="@id/homeScreenFragment" />
     </fragment>
 </navigation>

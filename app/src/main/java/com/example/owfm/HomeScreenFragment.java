@@ -46,6 +46,9 @@ public class HomeScreenFragment extends Fragment {
         binding.addOrderImageView.setOnClickListener(view->
                 Navigation.findNavController(view).navigate(R.id.action_homeScreenFragment_to_newWorkOrderFragment));
 
+        //navigate to remedy settings fragment
+        binding.userfullnameTextview.setOnClickListener(view -> Navigation.findNavController(view).navigate(R.id.action_homeScreenFragment_to_remedySettingsFragment));
+
         //open dialog to confirm work order deletion
         binding.deleteOrderImageView.setOnClickListener(view -> Dialog("You are about to delete the selected work order(s)."));
 

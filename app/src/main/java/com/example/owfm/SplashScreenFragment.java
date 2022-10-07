@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.example.owfm.databinding.FragmentSplashScreenBinding;
 
+import java.util.logging.ConsoleHandler;
 import java.util.logging.Handler;
 import java.util.logging.LogRecord;
 
@@ -33,15 +34,6 @@ public class SplashScreenFragment extends Fragment {
 
     private void setupUi(){
         //navigate to home screen
-        getFragmentManager().beginTransaction().replace(R.id.splashScreenFragment, new Fragment()).commit();
 
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                assert getFragmentManager() != null;
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.splashScreenFragment, new HomeScreenFragment()).commit();
-            }
-        };
     }
 }
