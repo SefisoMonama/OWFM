@@ -16,6 +16,18 @@
         <action
             android:id="@+id/action_homeScreenFragment_to_remedySettingsFragment"
             app:destination="@id/remedySettingsFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_syncWorkOrderValuesFragment"
+            app:destination="@id/syncWorkOrderValuesFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_applicationSettingsFragment"
+            app:destination="@id/applicationSettingsFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_syncScannerValuesFragment"
+            app:destination="@id/syncScannerValuesFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_appLogsFragment"
+            app:destination="@id/appLogsFragment" />
     </fragment>
     <fragment
         android:id="@+id/splashScreenFragment"
@@ -34,6 +46,9 @@
         <action
             android:id="@+id/action_newWorkOrderFragment_to_homeScreenFragment"
             app:destination="@id/homeScreenFragment" />
+        <action
+            android:id="@+id/action_newWorkOrderFragment_to_homeScreenFragment2"
+            app:destination="@id/homeScreenFragment" />
     </fragment>
     <fragment
         android:id="@+id/remedySettingsFragment"
@@ -42,6 +57,63 @@
         tools:layout="@layout/fragment_remedy_settings" >
         <action
             android:id="@+id/action_remedySettingsFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+        <action
+            android:id="@+id/action_remedySettingsFragment_to_appLogsFragment"
+            app:destination="@id/appLogsFragment" />
+        <action
+            android:id="@+id/action_remedySettingsFragment_to_applicationSettingsFragment"
+            app:destination="@id/applicationSettingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/appLogsFragment"
+        android:name="com.example.owfm.AppLogsFragment"
+        android:label="fragment_app_logs"
+        tools:layout="@layout/fragment_app_logs" >
+        <action
+            android:id="@+id/action_appLogsFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+        <action
+            android:id="@+id/action_appLogsFragment_to_remedySettingsFragment"
+            app:destination="@id/remedySettingsFragment" />
+        <action
+            android:id="@+id/action_appLogsFragment_to_applicationSettingsFragment"
+            app:destination="@id/applicationSettingsFragment" />
+        <action
+            android:id="@+id/action_appLogsFragment_to_applicationSettingsFragment2"
+            app:destination="@id/applicationSettingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/applicationSettingsFragment"
+        android:name="com.example.owfm.ApplicationSettingsFragment"
+        android:label="fragment_application_settings"
+        tools:layout="@layout/fragment_application_settings" >
+        <action
+            android:id="@+id/action_applicationSettingsFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+        <action
+            android:id="@+id/action_applicationSettingsFragment_to_remedySettingsFragment"
+            app:destination="@id/remedySettingsFragment" />
+        <action
+            android:id="@+id/action_applicationSettingsFragment_to_appLogsFragment"
+            app:destination="@id/appLogsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/syncScannerValuesFragment"
+        android:name="com.example.owfm.SyncScannerValuesFragment"
+        android:label="fragment_sync_scanner_values"
+        tools:layout="@layout/fragment_sync_scanner_values" >
+        <action
+            android:id="@+id/action_syncScannerValuesFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/syncWorkOrderValuesFragment"
+        android:name="com.example.owfm.SyncWorkOrderValuesFragment"
+        android:label="fragment_sync_work_order_values"
+        tools:layout="@layout/fragment_sync_work_order_values" >
+        <action
+            android:id="@+id/action_syncWorkOrderValuesFragment_to_homeScreenFragment"
             app:destination="@id/homeScreenFragment" />
     </fragment>
 </navigation>

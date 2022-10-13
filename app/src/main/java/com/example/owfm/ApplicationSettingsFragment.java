@@ -10,22 +10,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.owfm.databinding.FragmentRemedySettingsBinding;
-import com.example.owfm.databinding.FragmentRemedySettingsBinding;
+import com.example.owfm.databinding.FragmentApplicationSettingsBinding;
 
-public class RemedySettingsFragment extends Fragment {
+public class ApplicationSettingsFragment extends Fragment {
 
-    FragmentRemedySettingsBinding binding;
+    FragmentApplicationSettingsBinding binding;
 
-    public RemedySettingsFragment() {
+    public ApplicationSettingsFragment() {
         // Required empty public constructor
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentRemedySettingsBinding.inflate(getLayoutInflater());
+        binding = FragmentApplicationSettingsBinding.inflate(getLayoutInflater());
         assert container != null;
         container.clearDisappearingChildren();
         setupUi();
@@ -33,17 +34,18 @@ public class RemedySettingsFragment extends Fragment {
     }
 
     private void setupUi(){
-        binding.bottomNavigation.setSelectedItemId(R.id.remedy_settings);
-        //add back button drawable on toolbar
-        binding.remedySettingsToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+        binding.bottomNavigation.setSelectedItemId(R.id.application_settings);
 
-        //navigate to home when toolbar back button is clicked
-        binding.remedySettingsToolbar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.homeScreenFragment);
-            }
-        });
+            //add back button drawable on toolbar
+            binding.applicationSettingsToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+
+            //navigate to home when toolbar back button is clicked
+            binding.applicationSettingsToolbar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Navigation.findNavController(view).navigate(R.id.homeScreenFragment);
+                }
+            });
 
         // When device back button is pressed navigate to home screen
         OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {
@@ -61,15 +63,16 @@ public class RemedySettingsFragment extends Fragment {
                     Navigation.findNavController(getView()).navigate(R.id.homeScreenFragment);
                     break;
                 case R.id.remedy_settings:
+                    Navigation.findNavController(getView()).navigate(R.id.action_applicationSettingsFragment_to_remedySettingsFragment);
                     break;
                 case R.id.application_settings:
-                    Navigation.findNavController(getView()).navigate(R.id.action_remedySettingsFragment_to_applicationSettingsFragment);
                     break;
                 case R.id.appLogs:
-                    Navigation.findNavController(getView()).navigate(R.id.action_remedySettingsFragment_to_appLogsFragment);
+                    Navigation.findNavController(getView()).navigate(R.id.action_applicationSettingsFragment_to_appLogsFragment);
                     break;
             }
             return true;
         });
     }
+
 }

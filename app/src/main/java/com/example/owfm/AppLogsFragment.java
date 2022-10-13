@@ -10,14 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.owfm.databinding.FragmentRemedySettingsBinding;
-import com.example.owfm.databinding.FragmentRemedySettingsBinding;
+import com.example.owfm.databinding.FragmentAppLogsBinding;
 
-public class RemedySettingsFragment extends Fragment {
+public class AppLogsFragment extends Fragment {
 
-    FragmentRemedySettingsBinding binding;
-
-    public RemedySettingsFragment() {
+    FragmentAppLogsBinding binding;
+    public AppLogsFragment() {
         // Required empty public constructor
     }
 
@@ -25,23 +23,26 @@ public class RemedySettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentRemedySettingsBinding.inflate(getLayoutInflater());
+        binding = FragmentAppLogsBinding.inflate(getLayoutInflater());
+        setupUi();
         assert container != null;
         container.clearDisappearingChildren();
-        setupUi();
         return binding.getRoot();
     }
 
-    private void setupUi(){
-        binding.bottomNavigation.setSelectedItemId(R.id.remedy_settings);
+    private void setupUi() {
+
+        //
+        binding.bottomNavigation.setSelectedItemId(R.id.appLogs);
+
         //add back button drawable on toolbar
-        binding.remedySettingsToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+        binding.appLogsToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
 
         //navigate to home when toolbar back button is clicked
-        binding.remedySettingsToolbar.setOnClickListener(new View.OnClickListener() {
+        binding.appLogsToolbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.homeScreenFragment);
+                Navigation.findNavController(view).navigate(R.id.action_appLogsFragment_to_homeScreenFragment);
             }
         });
 
@@ -61,12 +62,12 @@ public class RemedySettingsFragment extends Fragment {
                     Navigation.findNavController(getView()).navigate(R.id.homeScreenFragment);
                     break;
                 case R.id.remedy_settings:
+                    Navigation.findNavController(getView()).navigate(R.id.action_appLogsFragment_to_remedySettingsFragment);
                     break;
                 case R.id.application_settings:
-                    Navigation.findNavController(getView()).navigate(R.id.action_remedySettingsFragment_to_applicationSettingsFragment);
+                    Navigation.findNavController(getView()).navigate(R.id.action_appLogsFragment_to_applicationSettingsFragment);
                     break;
                 case R.id.appLogs:
-                    Navigation.findNavController(getView()).navigate(R.id.action_remedySettingsFragment_to_appLogsFragment);
                     break;
             }
             return true;

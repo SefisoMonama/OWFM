@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="@string/home"
+        android:icon="@drawable/ic_home"/>
+    <item
+        android:id="@+id/remedy_settings"
+        android:title="Profile"
+        android:icon="@drawable/ic_person"/>
+
+    <item
+        android:id="@+id/application_settings"
+        android:title="Settings"
+        android:icon="@drawable/ic_settings"/>
+
+    <item
+        android:id="@+id/appLogs"
+        android:title="Logs"
+        android:icon="@drawable/ic_logs_24"/>
+</menu>

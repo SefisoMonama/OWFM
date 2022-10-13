@@ -9,15 +9,14 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toolbar;
 
-import com.example.owfm.databinding.FragmentNewWorkOrderBinding;
+import com.example.owfm.databinding.FragmentSyncWorkOrderValuesBinding;
 
-public class NewWorkOrderFragment extends Fragment {
+public class SyncWorkOrderValuesFragment extends Fragment {
 
-    FragmentNewWorkOrderBinding binding;
+    FragmentSyncWorkOrderValuesBinding binding;
 
-    public NewWorkOrderFragment() {
+    public SyncWorkOrderValuesFragment() {
         // Required empty public constructor
     }
 
@@ -25,20 +24,20 @@ public class NewWorkOrderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding=FragmentNewWorkOrderBinding.inflate(getLayoutInflater());
-        assert container != null;
-        container.clearDisappearingChildren();
+        binding = FragmentSyncWorkOrderValuesBinding.inflate(getLayoutInflater());
         setupUi();
         return binding.getRoot();
     }
 
     private void setupUi(){
-        //add back button on toolbar
-        binding.newWorkOrderToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        binding.newWorkOrderToolbar.setOnClickListener(new View.OnClickListener() {
+        //add back button drawable on toolbar
+        binding.syncWorkOrderValuesToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+
+        //navigate to home when toolbar back button is clicked
+        binding.syncWorkOrderValuesToolbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_newWorkOrderFragment_to_homeScreenFragment);
+                Navigation.findNavController(view).navigate(R.id.action_syncWorkOrderValuesFragment_to_homeScreenFragment);
             }
         });
 
@@ -50,7 +49,6 @@ public class NewWorkOrderFragment extends Fragment {
             }
         };
         requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), callback);
-
 
     }
 }

@@ -7,23 +7,11 @@
         android:title="">
         <menu>
             <item
-                android:id="@+id/home"
-                android:title="@string/home"/>
-            <item
-                android:id="@+id/remedy_settings"
-                android:title="@string/remedy_settings"/>
-            <item
-                android:id="@+id/application_settings"
-                android:title="@string/application_settings"/>
-            <item
                 android:id="@+id/sync_scanner_values"
                 android:title="@string/sync_scanner_values"/>
             <item
                 android:id="@+id/sync_work_order_values"
                 android:title="@string/sync_work_order_values"/>
-            <item
-                android:id="@+id/app_logs"
-                android:title="@string/app_logs"/>
         </menu>
 
     </item>

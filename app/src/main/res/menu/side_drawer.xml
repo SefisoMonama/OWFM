@@ -6,47 +6,35 @@
     <item
         tool:showAsAction="ifRoom"
         android:id="@+id/audit_item"
-        android:icon="@drawable/owfm_tools"
         android:title="Audit" />
 
 
     <item
         android:id="@+id/breakFix_item"
-        android:icon="@drawable/owfm_tools"
         android:title="Break Fix" />
 
     <item
         android:id="@+id/breakReplace_item"
-        android:icon="@drawable/owfm_tools"
         android:title="Break Replace" />
 
     <item
         android:id="@+id/change_item"
-        android:icon="@drawable/owfm_tools"
         android:title="Change" />
 
     <item
         android:id="@+id/dispose_item"
-        android:icon="@drawable/owfm_tools"
         android:title="Dispose" />
 
     <item
         android:id="@+id/goodsReceived_item"
-        android:icon="@drawable/owfm_tools"
         android:title="Goods Received" />
 
     <item
         android:id="@+id/move_item"
-        android:icon="@drawable/owfm_tools"
         android:title="Move" />
 
     <item
         android:id="@+id/ReturnLoan_item"
-        android:icon="@drawable/owfm_tools"
         android:title="Return/Loan" />
-
-
-
-
 
 </menu>
