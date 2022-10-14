@@ -1,4 +1,4 @@
-package com.example.owfm;
+package com.example.owfm.ui;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.owfm.R;
 import com.example.owfm.databinding.FragmentHomeScreenBinding;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;

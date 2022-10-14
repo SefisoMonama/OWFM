@@ -1,4 +1,4 @@
-package com.example.owfm;
+package com.example.owfm.ui;
 
 import android.app.Notification;
 import android.content.Context;
@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.owfm.R;
 import com.example.owfm.databinding.FragmentSplashScreenBinding;
 
 import java.util.logging.ConsoleHandler;

@@ -1,4 +1,4 @@
-package com.example.owfm;
+package com.example.owfm.ui;
 
 import android.os.Bundle;
 
@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.owfm.R;
 import com.example.owfm.databinding.FragmentSyncWorkOrderValuesBinding;
 
 public class SyncWorkOrderValuesFragment extends Fragment {

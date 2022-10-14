@@ -1,4 +1,4 @@
-package com.example.owfm;
+package com.example.owfm.ui;
 
 import android.os.Bundle;
 
@@ -9,14 +9,16 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toolbar;
 
-import com.example.owfm.databinding.FragmentSyncScannerValuesBinding;
+import com.example.owfm.R;
+import com.example.owfm.databinding.FragmentNewWorkOrderBinding;
 
-public class SyncScannerValuesFragment extends Fragment {
+public class NewWorkOrderFragment extends Fragment {
 
-    FragmentSyncScannerValuesBinding binding;
+    FragmentNewWorkOrderBinding binding;
 
-    public SyncScannerValuesFragment() {
+    public NewWorkOrderFragment() {
         // Required empty public constructor
     }
 
@@ -24,20 +26,20 @@ public class SyncScannerValuesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentSyncScannerValuesBinding.inflate(getLayoutInflater());
+        binding=FragmentNewWorkOrderBinding.inflate(getLayoutInflater());
+        assert container != null;
+        container.clearDisappearingChildren();
         setupUi();
         return binding.getRoot();
     }
 
     private void setupUi(){
-        //add back button drawable on toolbar
-        binding.syncScannerValuesToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-
-        //navigate to home when toolbar back button is clicked
-        binding.syncScannerValuesToolbar.setOnClickListener(new View.OnClickListener() {
+        //add back button on toolbar
+        binding.newWorkOrderToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+        binding.newWorkOrderToolbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_syncScannerValuesFragment_to_homeScreenFragment);
+                Navigation.findNavController(view).navigate(R.id.action_newWorkOrderFragment_to_homeScreenFragment);
             }
         });
 
@@ -49,6 +51,7 @@ public class SyncScannerValuesFragment extends Fragment {
             }
         };
         requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), callback);
+
 
     }
 }

@@ -1,4 +1,4 @@
-package com.example.owfm;
+package com.example.owfm.ui;
 
 import android.os.Bundle;
 
@@ -8,13 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.owfm.databinding.FragmentBreakFixBinding;
+import com.example.owfm.databinding.FragmentAuditBinding;
 
-public class BreakFixFragment extends Fragment {
+public class AuditFragment extends Fragment {
 
-    FragmentBreakFixBinding binding;
+    FragmentAuditBinding binding;
 
-    public BreakFixFragment() {
+    public AuditFragment() {
         // Required empty public constructor
     }
 
@@ -22,7 +22,7 @@ public class BreakFixFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentBreakFixBinding.inflate(getLayoutInflater());
+        binding = FragmentAuditBinding.inflate(getLayoutInflater());
         return binding.getRoot();
     }
 }

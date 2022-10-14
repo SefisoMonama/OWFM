@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeScreenFragment"
-        android:name="com.example.owfm.HomeScreenFragment"
+        android:name="com.example.owfm.ui.HomeScreenFragment"
         android:label="fragment_home_screen"
         tools:layout="@layout/fragment_home_screen">
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/splashScreenFragment"
-        android:name="com.example.owfm.SplashScreenFragment"
+        android:name="com.example.owfm.ui.SplashScreenFragment"
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen">
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/newWorkOrderFragment"
-        android:name="com.example.owfm.NewWorkOrderFragment"
+        android:name="com.example.owfm.ui.NewWorkOrderFragment"
         android:label="fragment_new_work_order"
         tools:layout="@layout/fragment_new_work_order" >
         <action
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/remedySettingsFragment"
-        android:name="com.example.owfm.RemedySettingsFragment"
+        android:name="com.example.owfm.ui.RemedySettingsFragment"
         android:label="fragment_remedy_settings"
         tools:layout="@layout/fragment_remedy_settings" >
         <action
@@ -67,7 +67,7 @@
     </fragment>
     <fragment
         android:id="@+id/appLogsFragment"
-        android:name="com.example.owfm.AppLogsFragment"
+        android:name="com.example.owfm.ui.AppLogsFragment"
         android:label="fragment_app_logs"
         tools:layout="@layout/fragment_app_logs" >
         <action
@@ -85,7 +85,7 @@
     </fragment>
     <fragment
         android:id="@+id/applicationSettingsFragment"
-        android:name="com.example.owfm.ApplicationSettingsFragment"
+        android:name="com.example.owfm.ui.ApplicationSettingsFragment"
         android:label="fragment_application_settings"
         tools:layout="@layout/fragment_application_settings" >
         <action
@@ -100,7 +100,7 @@
     </fragment>
     <fragment
         android:id="@+id/syncScannerValuesFragment"
-        android:name="com.example.owfm.SyncScannerValuesFragment"
+        android:name="com.example.owfm.ui.SyncScannerValuesFragment"
         android:label="fragment_sync_scanner_values"
         tools:layout="@layout/fragment_sync_scanner_values" >
         <action
@@ -109,7 +109,7 @@
     </fragment>
     <fragment
         android:id="@+id/syncWorkOrderValuesFragment"
-        android:name="com.example.owfm.SyncWorkOrderValuesFragment"
+        android:name="com.example.owfm.ui.SyncWorkOrderValuesFragment"
         android:label="fragment_sync_work_order_values"
         tools:layout="@layout/fragment_sync_work_order_values" >
         <action
