@@ -26,6 +26,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.owfm.databinding.ActivityMainBinding;
+import com.facebook.stetho.Stetho;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -52,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupUi() {
+
+        //
+        Stetho.initializeWithDefaults(this);
         //populate with home screen fragment on create
         /**loadFrag(new HomeScreenFragment(), 0);
 

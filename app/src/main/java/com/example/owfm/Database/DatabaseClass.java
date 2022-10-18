@@ -9,17 +9,23 @@ import androidx.room.RoomDatabase;
 import com.example.owfm.DAO.Dao;
 import com.example.owfm.Entities.Profile;
 
-@Database(entities = {Profile.class},version = 1)
+@Database(entities = Profile.class, exportSchema = false, version = 1)
 public abstract class DatabaseClass extends RoomDatabase {
 
-    public abstract Dao getDao();
+    private static final String DB_NAME = "profileDb";
 
     private static DatabaseClass instance;
 
-    DatabaseClass getDatabase(final Context context){
-        if(instance!=null){
-            synchronized (DatabaseClass.class){
-                instance = Room.databaseBuilder(context, DatabaseClass.class, "DATABASE").build();
-            }
+    public static synchronized DatabaseClass getDB(Context context){
+        if(instance==null){
+            instance = Room.databaseBuilder(context, DatabaseClass.class, DB_NAME)
+                    .fallbackToDestructiveMigration()
+                    .allowMainThreadQueries()
+                    .build();
         }
+
         return instance;
+    }
+
+    public abstract Dao dao();
+}

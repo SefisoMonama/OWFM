@@ -54,9 +54,11 @@
     </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/appLogs_textView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="App Logs"
+        android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/bottomNav_linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -10,10 +10,11 @@ import java.util.List;
 @androidx.room.Dao
 public interface Dao {
 
-    @Insert
-    void insertAllData(Profile modelprofile);
-
     //Select all Data
     @Query("select * from Profile")
     List<Profile> getAllData();
+
+    //Insert data
+    @Insert
+    void insertAllData(Profile profile);
 }

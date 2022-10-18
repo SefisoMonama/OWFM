@@ -25,6 +25,8 @@ import com.example.owfm.databinding.FragmentHomeScreenBinding;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.Objects;
+
 public class HomeScreenFragment extends Fragment {
 
     FragmentHomeScreenBinding binding;
@@ -115,7 +117,7 @@ public class HomeScreenFragment extends Fragment {
         binding.homeToolbar.setOnMenuItemClickListener(item -> {
             switch (item.getItemId()) {
                 case R.id.sync_scanner_values:
-                    Navigation.findNavController(getView()).navigate(R.id.action_homeScreenFragment_to_syncScannerValuesFragment);
+                    Navigation.findNavController(requireView()).navigate(R.id.action_homeScreenFragment_to_syncScannerValuesFragment);
                     break;
 
                 case R.id.sync_work_order_values:
