@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import com.example.owfm.Database.DatabaseClass;
@@ -42,9 +43,6 @@ public class RemedySettingsFragment extends Fragment {
     }
 
     private void setupUi() {
-        //
-        Stetho.initializeWithDefaults(requireActivity());
-
 
         //declare
         String username = binding.usernameEditText.getText().toString().trim();
@@ -60,6 +58,8 @@ public class RemedySettingsFragment extends Fragment {
             confirmDataLoad();
             saveDataLocally();
             getLocalData();
+
+            //new Profile.getToken().execute();
         });
 
         //highlight current nav item
@@ -80,7 +80,17 @@ public class RemedySettingsFragment extends Fragment {
         };
         requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), callback);
 
-        // 
+
+        //display or hide advanced settings with switch
+        binding.advancedSettingsSwitch.setOnCheckedChangeListener((compoundButton, isChecked) -> {
+            if (isChecked) {
+                displayAdvancedSettings();
+            } else {
+                hideAdvancedSettings();
+            }
+        });
+
+        //onclick logic for bottom navigation bar
         binding.bottomNavigation.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.home:
@@ -155,34 +165,50 @@ public class RemedySettingsFragment extends Fragment {
         String port = binding.portNumberEditText.getText().toString().trim();
         String protocol = binding.protocolEditText.getText().toString();
         String hostServer = binding.hostserverEditText.getText().toString();
+        String loginPath = binding.loginPathEditText.getText().toString();
+        String logoutPath = binding.logoutPathEditText.getText().toString();
+        String versionPath = binding.versionPathEditText.getText().toString();
+        String prefix = binding.prefixEditText.getText().toString();
+        String jwt = new Profile.getToken().execute().toString();
+
 
         if (!username.isEmpty() && !password.isEmpty() && password.length() >= 8 && !port.isEmpty() && !server.isEmpty() && !protocol.isEmpty() && !hostServer.isEmpty()) {
             DatabaseClass databaseClass = DatabaseClass.getDB(requireActivity());
             databaseClass.dao().insertAllData(
-                    new Profile(username, password, server, port, protocol, hostServer)
+                    new Profile(username, password, server, port, protocol, hostServer, loginPath, logoutPath, versionPath, prefix, jwt)
             );
 
             Toast.makeText(getActivity(), "Profile info successfully saved!", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void getLocalData(){
-        //declare
-        String username = binding.usernameEditText.getText().toString().trim();
-        String password = binding.passwordEditText.getText().toString().trim();
-        String server = binding.serverEditText.getText().toString().trim();
-        String port = binding.portNumberEditText.getText().toString().trim();
-        String protocol = binding.protocolEditText.getText().toString();
-        String hostServer = binding.hostserverEditText.getText().toString();
-
+    private void getLocalData() {
         //check if data is correctly saved via logcat
         DatabaseClass databaseClass = DatabaseClass.getDB(requireActivity());
         ArrayList<Profile> profileInfo = (ArrayList<Profile>) databaseClass.dao().getAllData();
 
         for (int i = 0; i < profileInfo.size(); i++) {
-            Log.d("Profile Sefiso", "id" + profileInfo.get(i).getKeys() + "Username" + profileInfo.get(i).getUsername() + "Password" + profileInfo.get(i).getPassword() + "Server" + profileInfo.get(i).getServer() + "Port" + profileInfo.get(i).getPort() + "Protocol" + profileInfo.get(i).getProtocol() + "Host Server" + profileInfo.get(i).getHostServer());
+            Log.d("Profile Sefiso", "id" + profileInfo.get(i).getKeys() + "Username" + profileInfo.get(i).getUsername() + "Password" + profileInfo.get(i).getPassword() + "Server" + profileInfo.get(i).getServer() + "Port" + profileInfo.get(i).getPort() + "Protocol" + profileInfo.get(i).getProtocol() +
+                    "Host Server" + profileInfo.get(i).getHostServer() + "LoginPath" + profileInfo.get(i).getLoginPath() + "LogoutPath" + profileInfo.get(i).getLogoutPath() + "VersionPath" + profileInfo.get(i).getVersionPath() + "Prefix" + profileInfo.get(i).getPrefix() + "Jwt" + profileInfo.get(i).getJwt());
         }
+    }
 
+    private void displayAdvancedSettings() {
+        binding.advancedTextView.setVisibility(View.VISIBLE);
+        binding.advancedHorizontalView.setVisibility(View.VISIBLE);
+        binding.loginPathLinearLayout.setVisibility(View.VISIBLE);
+        binding.logoutPathLinearLayout.setVisibility(View.VISIBLE);
+        binding.versionPathLinearLayout.setVisibility(View.VISIBLE);
+        binding.prefixLinearLayout.setVisibility(View.VISIBLE);
+    }
+
+    private void hideAdvancedSettings() {
+        binding.advancedTextView.setVisibility(View.GONE);
+        binding.advancedHorizontalView.setVisibility(View.GONE);
+        binding.loginPathLinearLayout.setVisibility(View.GONE);
+        binding.logoutPathLinearLayout.setVisibility(View.GONE);
+        binding.versionPathLinearLayout.setVisibility(View.GONE);
+        binding.prefixLinearLayout.setVisibility(View.GONE);
     }
 }
 

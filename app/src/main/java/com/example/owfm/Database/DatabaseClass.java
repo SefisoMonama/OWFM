@@ -12,7 +12,7 @@ import com.example.owfm.Entities.Profile;
 @Database(entities = Profile.class, exportSchema = false, version = 1)
 public abstract class DatabaseClass extends RoomDatabase {
 
-    private static final String DB_NAME = "profileDb";
+    private static final String DB_NAME = "owfm";
 
     private static DatabaseClass instance;
 

@@ -9,17 +9,21 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.owfm.Entities.Asset;
 import com.example.owfm.Entities.Profile;
 import com.example.owfm.R;
 
 import java.util.List;
 
-public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.viewHolder>{
+
+
+
+public class AssetAdapter extends RecyclerView.Adapter<AssetAdapter.viewHolder>{
 
     Context context;
-    List<Profile> list;
+    List<Asset> list;
 
-    public ProfileAdapter(Context context, List<Profile> list) {
+    public AssetAdapter(Context context, List<Asset> list) {
         this.context = context;
         this.list = list;
     }
@@ -32,7 +36,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.viewHold
 
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
-        holder.applog.setText(list.get(position).getUsername());
+        holder.applog.setText(list.get(position).getCiName());
     }
 
     @Override

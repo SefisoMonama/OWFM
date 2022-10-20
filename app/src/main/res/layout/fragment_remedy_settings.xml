@@ -36,12 +36,10 @@
         android:id="@+id/materialCardView3"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="12dp"
+        android:layout_margin="24dp"
+        android:background="@color/white"
         app:cardCornerRadius="20dp"
-        app:layout_constraintBottom_toTopOf="@id/saveSyncRemedySettings_buttons"
+        app:layout_constraintBottom_toTopOf="@+id/saveSyncRemedySettings_buttons"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/metaWeave_imageView"
@@ -53,172 +51,317 @@
             android:layout_height="match_parent"
             android:padding="24dp">
 
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="12dp"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.5">
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
-                    android:orientation="horizontal">
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="12dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/username_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:text="Username:"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/username_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@drawable/edit_text_shape"
+                            android:hint="Username"
+                            android:inputType="text"
+                            android:padding="8dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/password_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:text="Password:"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/password_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@drawable/edit_text_shape"
+                            android:hint="password"
+                            android:inputType="textPassword"
+                            android:padding="8dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/server_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:text="Server:"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/server_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@drawable/edit_text_shape"
+                            android:enabled="false"
+                            android:inputType="textAutoComplete"
+                            android:padding="8dp"
+                            android:text="48" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/portNumber_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:text="Ports:"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/portNumber_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@drawable/edit_text_shape"
+                            android:enabled="false"
+                            android:inputType="number"
+                            android:padding="8dp"
+                            android:text="13579" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/protocol_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:text="Protocol:"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/protocol_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@drawable/edit_text_shape"
+                            android:enabled="false"
+                            android:inputType="text"
+                            android:padding="8dp"
+                            android:text="https" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/hostserver_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:text="Host server:"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/hostserver_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@drawable/edit_text_shape"
+                            android:enabled="false"
+                            android:inputType="textWebEditText"
+                            android:padding="8dp"
+                            android:text="48.metaweave.co.za" />
+                    </LinearLayout>
 
                     <TextView
-                        android:id="@+id/username_textView"
+                        android:id="@+id/advanced_textView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="8"
-                        android:text="Username:"
-                        android:textSize="18sp" />
+                        android:textAlignment="center"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        android:layout_marginTop="24dp"
+                        android:text="ADVANCED" />
 
-                    <EditText
-                        android:id="@+id/username_editText"
+                    <View
+                        android:id="@+id/advancedHorizontal_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="12dp"
+                        android:visibility="gone"
+                        android:background="@color/skyBlue"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/server_linearlayout" />
+
+
+                    <LinearLayout
+                        android:id="@+id/loginPath_linearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="4"
-                        android:background="@drawable/edit_text_shape"
-                        android:hint="Username"
-                        android:inputType="text"
-                        android:padding="8dp" />
+                        android:layout_margin="12dp"
+                        android:visibility="gone"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/loginPath_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:text="login Path:"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/loginPath_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@drawable/edit_text_shape"
+                            android:enabled="true"
+                            android:inputType="textWebEditText"
+                            android:padding="8dp"
+                            android:text="/api/jwt/login" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/logoutPath_linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:visibility="gone"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/logoutPath_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:text="logout Path:"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/logoutPath_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@drawable/edit_text_shape"
+                            android:enabled="true"
+                            android:inputType="textWebEditText"
+                            android:padding="8dp"
+                            android:text="/api/jwt/logout" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/versionPath_linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:visibility="gone"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/versionPath_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:text="Version Path:"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/versionPath_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@drawable/edit_text_shape"
+                            android:enabled="true"
+                            android:inputType="textWebEditText"
+                            android:padding="8dp"
+                            android:text="/api/arsys/v1" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/prefix_linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:visibility="gone"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/prefix_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:text="Prefix:"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/prefix_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@drawable/edit_text_shape"
+                            android:enabled="true"
+                            android:inputType="textWebEditText"
+                            android:padding="8dp"
+                            android:text="AR-JWT" />
+                    </LinearLayout>
+
+
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/password_textView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="8"
-                        android:text="Password:"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/password_editText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
-                        android:background="@drawable/edit_text_shape"
-                        android:hint="password"
-                        android:inputType="textPassword"
-                        android:padding="8dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/server_textView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="8"
-                        android:text="Server:"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/server_editText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
-                        android:background="@drawable/edit_text_shape"
-                        android:hint="47"
-                        android:inputType="textAutoComplete"
-                        android:padding="8dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/portNumber_textView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="8"
-                        android:text="Ports"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/portNumber_editText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
-                        android:maxLength="4"
-                        android:background="@drawable/edit_text_shape"
-                        android:hint="8008"
-                        android:inputType="number"
-                        android:padding="8dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/protocol_textView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="8"
-                        android:text="Protocol:"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/protocol_editText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
-                        android:background="@drawable/edit_text_shape"
-                        android:hint="https:"
-                        android:inputType="text"
-                        android:padding="8dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/hostserver_textView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="8"
-                        android:text="Host server:"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/hostserver_editText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
-                        android:background="@drawable/edit_text_shape"
-                        android:hint="https://hostserver.com"
-                        android:inputType="textWebEditText"
-                        android:padding="8dp" />
-                </LinearLayout>
-
-
-            </LinearLayout>
-
+            </ScrollView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -226,23 +369,37 @@
         android:id="@+id/saveSyncRemedySettings_buttons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="12dp"
-        android:enabled="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/btn_round_corners_shape"
+        android:enabled="true"
         android:text="Save/Sync"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@id/bottomNav_linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav_linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/materialCardView3" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/advancedSettings_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/btn_round_corners_shape"
+        android:enabled="true"
+        android:text="ADVANCED"
+        android:textColor="@color/lightGrey"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/saveSyncRemedySettings_buttons"
+        app:layout_constraintEnd_toEndOf="@+id/materialCardView3"
+        app:layout_constraintTop_toTopOf="@+id/saveSyncRemedySettings_buttons" />
+
     <TextView
         android:id="@+id/testTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="test"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:id="@+id/bottomNav_linearLayout"
         android:layout_width="match_parent"
