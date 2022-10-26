@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.AppLogsFragment">
+    tools:context="za.co.owfm.ui.AppLogsFragment">
+
+    <Button
+        android:id="@+id/clearLogs_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Clear"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_round_corners_shape"
+        app:layout_constraintBottom_toBottomOf="@+id/refreshLogs_button"
+        app:layout_constraintStart_toEndOf="@+id/refreshLogs_button"
+        app:layout_constraintTop_toTopOf="@+id/refreshLogs_button" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/appLogs_toolbar"
@@ -26,11 +38,46 @@
         android:id="@+id/metaWeave_imageView"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:src="@drawable/metaweave_logo"
-        app:layout_constraintTop_toBottomOf="@id/appLogs_toolbar"
         app:layout_constraintEnd_toEndOf="@id/appLogs_toolbar"
         app:layout_constraintStart_toStartOf="@id/appLogs_toolbar"
-        android:layout_marginTop="12dp"/>
+        app:layout_constraintTop_toBottomOf="@id/appLogs_toolbar" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView3"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="@color/white"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/errorLogs_textView"
+        app:layout_constraintTop_toBottomOf="@+id/errorLogs_textView"
+        app:strokeColor="@color/black"
+        app:strokeWidth="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/noLogs_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+
+                android:layout_marginTop="16dp"
+                android:text="No logs found!"
+                android:textColor="@color/lightGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <LinearLayout
         android:id="@+id/bottomNav_linearLayout"
@@ -44,23 +91,37 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="match_parent"
             android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:elevation="20dp"
             app:labelVisibilityMode="labeled"
-            android:layout_height="wrap_content"
-            app:menu="@menu/bottom_nav_menu"/>
+            app:menu="@menu/bottom_nav_menu" />
     </LinearLayout>
 
     <TextView
-        android:id="@+id/appLogs_textView"
+        android:id="@+id/errorLogs_textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="App Logs"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNav_linearLayout"
+        android:layout_marginTop="32dp"
+        android:text="Error Logs:"
+        android:paddingStart="12dp"
+        android:layout_marginStart="24dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/metaWeave_imageView" />
+
+    <Button
+        android:id="@+id/refreshLogs_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btn_round_corners_shape"
+        android:text="Refresh"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/materialCardView3"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView3" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

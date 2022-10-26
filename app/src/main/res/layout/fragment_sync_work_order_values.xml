@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.SyncWorkOrderValuesFragment">
+    tools:context="za.co.owfm.ui.SyncWorkOrderValuesFragment">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -34,5 +34,17 @@
         android:layout_marginTop="12dp"/>
 
 
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/homeFromWOValues_floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        app:tint="@color/white"
+        android:clickable="true"
+        android:src="@drawable/ic_home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

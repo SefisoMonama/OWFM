@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:fitsSystemWindows="true"
-    tools:context=".ui.HomeScreenFragment">
+    tools:context="za.co.owfm.ui.HomeScreenFragment">
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/sideDrawer_navigationView"
@@ -42,14 +42,14 @@
             android:id="@+id/userfullname_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/btn_round_corners_shape"
             android:elevation="8dp"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
             android:text="Casper Cloete"
             android:textAlignment="center"
-            android:textSize="18sp"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/home_toolbar" />
@@ -61,6 +61,7 @@
             android:layout_marginTop="24dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
+
             android:paddingStart="24dp"
             app:layout_constraintEnd_toEndOf="@+id/userfullname_textview"
             app:layout_constraintHorizontal_bias="0.0"
@@ -120,9 +121,9 @@
             android:id="@+id/firsthorizontal_view"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="12dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="8dp"
             android:background="@color/lightGrey"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -151,14 +152,14 @@
             <ImageButton
                 android:id="@+id/sync_ImageView"
                 android:layout_width="50dp"
-                android:layout_height="35dp"
+                android:layout_height="30dp"
                 android:background="@drawable/btn_round_corners_shape"
                 android:src="@drawable/btn_sync_all" />
 
             <ImageButton
                 android:id="@+id/refresh_imageView"
                 android:layout_width="50dp"
-                android:layout_height="35dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="8dp"
                 android:src="@drawable/btn_refresh_all" />
 
@@ -166,15 +167,13 @@
 
         <View
             android:id="@+id/secondhorizontal_view"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="2dp"
-            android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="24dp"
             android:background="@color/lightGrey"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/workOrderMenuItem_linearLayout"
+            app:layout_constraintStart_toStartOf="@+id/sideDrawerIcon_ImageView"
             app:layout_constraintTop_toBottomOf="@id/sideDrawerIcon_ImageView" />
 
         <TextView
@@ -184,7 +183,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="Work Orders:"
-            android:textSize="16sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
             app:layout_constraintStart_toStartOf="@+id/secondhorizontal_view"
@@ -202,14 +201,14 @@
             <ImageView
                 android:id="@+id/addOrder_ImageView"
                 android:layout_width="50dp"
-                android:layout_height="35dp"
+                android:layout_height="30dp"
                 android:contentDescription="@string/add_order"
                 android:src="@drawable/add_work_order" />
 
             <ImageView
                 android:id="@+id/deleteOrder_imageView"
-                android:layout_width="50dp"
-                android:layout_height="35dp"
+                android:layout_width="45dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="8dp"
                 android:contentDescription="Delete order"
                 android:src="@drawable/basket"
@@ -337,17 +336,15 @@
 
         <View
             android:id="@+id/thirdhorizontal_view"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="2dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
             android:layout_marginBottom="200dp"
             android:background="@color/black"
             android:orientation="horizontal"
             app:flow_verticalBias="0.7"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/secondhorizontal_view"
+            app:layout_constraintStart_toStartOf="@+id/secondhorizontal_view"
             app:layout_constraintTop_toBottomOf="@+id/wordOrderFieldHeads_linearLayout" />
 
 
@@ -358,7 +355,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="Scan Orders:"
-            android:textSize="16sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/Scans_linearLayout"
             app:layout_constraintStart_toStartOf="@+id/thirdhorizontal_view"
@@ -382,8 +379,8 @@
 
             <ImageView
                 android:id="@+id/deleteScanOrder_imageView"
-                android:layout_width="50dp"
-                android:layout_height="35dp"
+                android:layout_width="45dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="8dp"
                 android:contentDescription="Delete order"
                 android:src="@drawable/basket"
@@ -403,6 +400,7 @@
             app:layout_constraintTop_toBottomOf="@+id/scanOrder_textView" />
 
         <ImageView
+            android:id="@+id/imageView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -421,27 +419,34 @@
             app:layout_constraintStart_toEndOf="@+id/network_linearlayout"
             app:layout_constraintTop_toTopOf="@+id/network_linearlayout" />
 
-        <LinearLayout
-            android:id="@+id/bottomNav_linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:elevation="16dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent">
+
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:layout_width="match_parent"
                 android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:elevation="20dp"
                 app:labelVisibilityMode="labeled"
-                android:layout_height="wrap_content"
-                app:menu="@menu/bottom_nav_menu"/>
-        </LinearLayout>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:menu="@menu/bottom_nav_menu" />
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/btn_round_corners_shape"
+            android:text="@string/login"
+            android:textColor="@color/white"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

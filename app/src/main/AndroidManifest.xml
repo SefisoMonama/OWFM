@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -16,7 +18,7 @@
         android:theme="@style/Theme.OWFM"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name="za.co.owfm.MainActivity"
             android:configChanges="orientation"
             android:exported="true"
             android:screenOrientation="portrait"
@@ -31,6 +33,14 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <receiver android:name="za.co.owfm.util.networkListener.ConnectivityReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY.CHANGE"/>
+            </intent-filter>
+
+        </receiver>
     </application>
 
 </manifest>

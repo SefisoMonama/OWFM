@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.RemedySettingsFragment">
+    tools:context="za.co.owfm.ui.RemedySettingsFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/remedySettings_toolbar"
@@ -49,7 +49,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="24dp">
+            android:padding="16dp">
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -72,15 +72,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="12dp"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/username_textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="8"
-                            android:text="Username:"
-                            android:textSize="18sp" />
+                            android:padding="8dp"
+                            android:text="Username:" />
 
                         <EditText
                             android:id="@+id/username_editText"
@@ -90,22 +90,23 @@
                             android:background="@drawable/edit_text_shape"
                             android:hint="Username"
                             android:inputType="text"
-                            android:padding="8dp" />
+                            android:padding="8dp"
+                            android:paddingStart="12dp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="12dp"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/password_textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="8"
-                            android:text="Password:"
-                            android:textSize="18sp" />
+                            android:padding="8dp"
+                            android:text="Password:" />
 
                         <EditText
                             android:id="@+id/password_editText"
@@ -114,6 +115,7 @@
                             android:layout_weight="4"
                             android:background="@drawable/edit_text_shape"
                             android:hint="password"
+                            android:paddingStart="12dp"
                             android:inputType="textPassword"
                             android:padding="8dp" />
                     </LinearLayout>
@@ -122,7 +124,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="12dp"
-                        android:orientation="horizontal"
+                        android:orientation="vertical"
                         android:visibility="gone">
 
                         <TextView
@@ -130,8 +132,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="8"
-                            android:text="Server:"
-                            android:textSize="18sp" />
+                            android:padding="8dp"
+                            android:text="Server:" />
 
                         <EditText
                             android:id="@+id/server_editText"
@@ -142,6 +144,7 @@
                             android:enabled="false"
                             android:inputType="textAutoComplete"
                             android:padding="8dp"
+                            android:paddingStart="12dp"
                             android:text="48" />
                     </LinearLayout>
 
@@ -149,15 +152,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="12dp"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/portNumber_textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="8"
-                            android:text="Ports:"
-                            android:textSize="18sp" />
+                            android:padding="8dp"
+                            android:text="Ports:" />
 
                         <EditText
                             android:id="@+id/portNumber_editText"
@@ -168,6 +171,7 @@
                             android:enabled="false"
                             android:inputType="number"
                             android:padding="8dp"
+                            android:paddingStart="12dp"
                             android:text="13579" />
                     </LinearLayout>
 
@@ -175,15 +179,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="12dp"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/protocol_textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="8"
-                            android:text="Protocol:"
-                            android:textSize="18sp" />
+                            android:padding="8dp"
+                            android:text="Protocol:" />
 
                         <EditText
                             android:id="@+id/protocol_editText"
@@ -193,6 +197,7 @@
                             android:background="@drawable/edit_text_shape"
                             android:enabled="false"
                             android:inputType="text"
+                            android:paddingStart="12dp"
                             android:padding="8dp"
                             android:text="https" />
                     </LinearLayout>
@@ -201,15 +206,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="12dp"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/hostserver_textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="8"
-                            android:text="Host server:"
-                            android:textSize="18sp" />
+                            android:padding="8dp"
+                            android:text="Host server:" />
 
                         <EditText
                             android:id="@+id/hostserver_editText"
@@ -220,6 +225,7 @@
                             android:enabled="false"
                             android:inputType="textWebEditText"
                             android:padding="8dp"
+                            android:paddingStart="12dp"
                             android:text="48.metaweave.co.za" />
                     </LinearLayout>
 
@@ -227,11 +233,11 @@
                         android:id="@+id/advanced_textView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="ADVANCED"
                         android:textAlignment="center"
                         android:textSize="12sp"
-                        android:visibility="gone"
-                        android:layout_marginTop="24dp"
-                        android:text="ADVANCED" />
+                        android:visibility="gone" />
 
                     <View
                         android:id="@+id/advancedHorizontal_view"
@@ -239,9 +245,9 @@
                         android:layout_height="2dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="12dp"
-                        android:visibility="gone"
-                        android:background="@color/skyBlue"
+                        android:background="@color/lightGrey"
                         android:orientation="horizontal"
+                        android:visibility="gone"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/server_linearlayout" />
@@ -252,16 +258,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="12dp"
-                        android:visibility="gone"
-                        android:orientation="horizontal">
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
                         <TextView
                             android:id="@+id/loginPath_textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="8"
-                            android:text="login Path:"
-                            android:textSize="18sp" />
+                            android:padding="8dp"
+                            android:text="login Path:" />
 
                         <EditText
                             android:id="@+id/loginPath_editText"
@@ -272,6 +278,7 @@
                             android:enabled="true"
                             android:inputType="textWebEditText"
                             android:padding="8dp"
+                            android:paddingStart="12dp"
                             android:text="/api/jwt/login" />
                     </LinearLayout>
 
@@ -280,16 +287,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="12dp"
-                        android:visibility="gone"
-                        android:orientation="horizontal">
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
                         <TextView
                             android:id="@+id/logoutPath_textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="8"
-                            android:text="logout Path:"
-                            android:textSize="18sp" />
+                            android:padding="8dp"
+                            android:text="logout Path:" />
 
                         <EditText
                             android:id="@+id/logoutPath_editText"
@@ -300,6 +307,7 @@
                             android:enabled="true"
                             android:inputType="textWebEditText"
                             android:padding="8dp"
+                            android:paddingStart="12dp"
                             android:text="/api/jwt/logout" />
                     </LinearLayout>
 
@@ -308,16 +316,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="12dp"
-                        android:visibility="gone"
-                        android:orientation="horizontal">
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
                         <TextView
                             android:id="@+id/versionPath_textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="8"
-                            android:text="Version Path:"
-                            android:textSize="18sp" />
+                            android:padding="8dp"
+                            android:text="Version Path:" />
 
                         <EditText
                             android:id="@+id/versionPath_editText"
@@ -328,6 +336,7 @@
                             android:enabled="true"
                             android:inputType="textWebEditText"
                             android:padding="8dp"
+                            android:paddingStart="12dp"
                             android:text="/api/arsys/v1" />
                     </LinearLayout>
 
@@ -336,16 +345,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="12dp"
-                        android:visibility="gone"
-                        android:orientation="horizontal">
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
                         <TextView
                             android:id="@+id/prefix_textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="8"
-                            android:text="Prefix:"
-                            android:textSize="18sp" />
+                            android:padding="8dp"
+                            android:text="Prefix:" />
 
                         <EditText
                             android:id="@+id/prefix_editText"
@@ -356,10 +365,9 @@
                             android:enabled="true"
                             android:inputType="textWebEditText"
                             android:padding="8dp"
+                            android:paddingStart="12dp"
                             android:text="AR-JWT" />
                     </LinearLayout>
-
-
                 </LinearLayout>
             </ScrollView>
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -369,7 +377,6 @@
         android:id="@+id/saveSyncRemedySettings_buttons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/btn_round_corners_shape"
         android:enabled="true"
@@ -382,12 +389,10 @@
         android:id="@+id/advancedSettings_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/btn_round_corners_shape"
         android:enabled="true"
         android:text="ADVANCED"
         android:textColor="@color/lightGrey"
-        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/saveSyncRemedySettings_buttons"
         app:layout_constraintEnd_toEndOf="@+id/materialCardView3"
         app:layout_constraintTop_toTopOf="@+id/saveSyncRemedySettings_buttons" />

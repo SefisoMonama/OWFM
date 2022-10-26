@@ -12,7 +12,12 @@
             <item
                 android:id="@+id/sync_work_order_values"
                 android:title="@string/sync_work_order_values"/>
-        </menu>
 
+            <item
+                android:id="@+id/logout_item"
+                android:title="Logout"
+                app:iconTint="@color/red"
+                android:icon="@drawable/ic_logout"/>
+        </menu>
     </item>
 </menu>

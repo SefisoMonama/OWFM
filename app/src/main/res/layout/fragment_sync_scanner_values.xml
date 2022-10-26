@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.SyncScannerValuesFragment">
+    tools:context="za.co.owfm.ui.SyncScannerValuesFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/syncScannerValues_toolbar"
@@ -31,6 +31,18 @@
         app:layout_constraintEnd_toEndOf="@id/syncScannerValues_toolbar"
         app:layout_constraintStart_toStartOf="@id/syncScannerValues_toolbar"
         android:layout_marginTop="12dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/homeFromScannerValues_floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        app:tint="@color/white"
+        android:clickable="true"
+        android:src="@drawable/ic_home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

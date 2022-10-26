@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="za.co.owfm.ui.SignUpFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:background="@drawable/constraint_botton_round_shape"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/back_imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_signup_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="24dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/metaweave_logo"
+        app:layout_constraintBottom_toTopOf="@+id/materialCardView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView3"
+        android:layout_width="match_parent"
+        android:layout_height="440dp"
+        android:layout_margin="24dp"
+        android:background="@color/white"
+        app:strokeColor="@color/black"
+        android:elevation="16dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout"
+        app:strokeWidth="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="12dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sign Up"
+                        android:textAlignment="center"
+                        android:textColor="@color/secondary"
+                        android:textSize="36sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/username_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:padding="8dp"
+                            android:text="Username:" />
+
+                        <EditText
+                            android:id="@+id/username_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@drawable/edit_text_shape"
+                            android:hint="Username"
+                            android:inputType="text"
+                            android:padding="8dp"
+                            android:paddingStart="12dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/password_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:padding="8dp"
+                            android:text="Password:" />
+
+                        <EditText
+                            android:id="@+id/password_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@drawable/edit_text_shape"
+                            android:hint="password"
+                            android:inputType="textPassword"
+                            android:padding="8dp"
+                            android:paddingStart="12dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/server_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:padding="8dp"
+                            android:text="Server:" />
+
+                        <EditText
+                            android:id="@+id/server_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@drawable/edit_text_shape"
+                            android:enabled="false"
+                            android:inputType="textAutoComplete"
+                            android:padding="8dp"
+                            android:paddingStart="12dp"
+                            android:text="48" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/portNumber_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:padding="8dp"
+                            android:text="Ports:" />
+
+                        <EditText
+                            android:id="@+id/portNumber_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@drawable/edit_text_shape"
+                            android:enabled="false"
+                            android:inputType="number"
+                            android:padding="8dp"
+                            android:paddingStart="12dp"
+                            android:text="13579" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/protocol_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:padding="8dp"
+                            android:text="Protocol:" />
+
+                        <EditText
+                            android:id="@+id/protocol_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@drawable/edit_text_shape"
+                            android:enabled="false"
+                            android:inputType="text"
+                            android:padding="8dp"
+                            android:paddingStart="12dp"
+                            android:text="https" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/hostserver_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:padding="8dp"
+                            android:text="Host server:" />
+
+                        <EditText
+                            android:id="@+id/hostserver_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@drawable/edit_text_shape"
+                            android:enabled="false"
+                            android:inputType="textWebEditText"
+                            android:padding="8dp"
+                            android:paddingStart="12dp"
+                            android:text="48.metaweave.co.za" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/advanced_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="ADVANCED"
+                        android:textAlignment="center"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <View
+                        android:id="@+id/advancedHorizontal_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@color/lightGrey"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/server_linearlayout" />
+
+
+                    <LinearLayout
+                        android:id="@+id/loginPath_linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/loginPath_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:padding="8dp"
+                            android:text="login Path:" />
+
+                        <EditText
+                            android:id="@+id/loginPath_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@drawable/edit_text_shape"
+                            android:enabled="true"
+                            android:inputType="textWebEditText"
+                            android:padding="8dp"
+                            android:paddingStart="12dp"
+                            android:text="/api/jwt/login" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/logoutPath_linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/logoutPath_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:padding="8dp"
+                            android:text="logout Path:" />
+
+                        <EditText
+                            android:id="@+id/logoutPath_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@drawable/edit_text_shape"
+                            android:enabled="true"
+                            android:inputType="textWebEditText"
+                            android:padding="8dp"
+                            android:paddingStart="12dp"
+                            android:text="/api/jwt/logout" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/versionPath_linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/versionPath_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:padding="8dp"
+                            android:text="Version Path:" />
+
+                        <EditText
+                            android:id="@+id/versionPath_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@drawable/edit_text_shape"
+                            android:enabled="true"
+                            android:inputType="textWebEditText"
+                            android:padding="8dp"
+                            android:paddingStart="12dp"
+                            android:text="/api/arsys/v1" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/prefix_linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/prefix_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:padding="8dp"
+                            android:text="Prefix:" />
+
+                        <EditText
+                            android:id="@+id/prefix_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="@drawable/edit_text_shape"
+                            android:enabled="true"
+                            android:inputType="textWebEditText"
+                            android:padding="8dp"
+                            android:paddingStart="12dp"
+                            android:text="AR-JWT" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <Button
+        android:id="@+id/signUp_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/btn_round_corners_shape"
+        android:enabled="true"
+        android:text="Sign Up"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/materialCardView3"
+        app:layout_constraintStart_toStartOf="@+id/materialCardView3"
+        app:layout_constraintTop_toBottomOf="@id/alreadyHaveAccountYet_linearLayout" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/advancedSettings_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_round_corners_shape"
+        android:enabled="true"
+        android:visibility="gone"
+        android:text="ADVANCED"
+        android:textColor="@color/lightGrey"
+        app:layout_constraintBottom_toBottomOf="@+id/signUp_button"
+        app:layout_constraintEnd_toEndOf="@+id/materialCardView3"
+        app:layout_constraintTop_toTopOf="@+id/signUp_button" />
+
+
+
+    <LinearLayout
+        android:id="@+id/alreadyHaveAccountYet_linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/materialCardView3"
+        app:layout_constraintStart_toStartOf="@id/materialCardView3"
+        app:layout_constraintTop_toBottomOf="@id/materialCardView3">
+
+        <TextView
+            android:id="@+id/alreadyHaveAccountYet_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already have an account? "
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/loginInstead_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Login"
+            android:textColor="@color/skyBlue"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
