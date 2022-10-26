@@ -16,13 +16,13 @@ import za.co.owfm.Database.DatabaseClass;
 import za.co.owfm.Entities.Profile;
 
 import com.example.owfm.R;
+import com.example.owfm.databinding.FragmentRemedySettingsBinding;
 
 import java.util.ArrayList;
 
 public class RemedySettingsFragment extends Fragment {
 
     FragmentRemedySettingsBinding binding;
-
 
     public RemedySettingsFragment() {
         // Required empty public constructor
@@ -172,7 +172,7 @@ public class RemedySettingsFragment extends Fragment {
 
         if (!username.isEmpty() && !password.isEmpty() && password.length() >= 8 && !port.isEmpty() && !server.isEmpty() && !protocol.isEmpty() && !hostServer.isEmpty()) {
             DatabaseClass databaseClass = DatabaseClass.getDB(requireActivity());
-            databaseClass.dao().insertAllData(
+            databaseClass.profileDao().insertAllData(
                     new Profile(username, password, server, port, protocol, hostServer, loginPath, logoutPath, versionPath, prefix, jwt)
             );
 
@@ -183,7 +183,7 @@ public class RemedySettingsFragment extends Fragment {
     private void getLocalData() {
         //check if data is correctly saved via logcat
         DatabaseClass databaseClass = DatabaseClass.getDB(requireActivity());
-        ArrayList<Profile> profileInfo = (ArrayList<Profile>) databaseClass.dao().getAllData();
+        ArrayList<Profile> profileInfo = (ArrayList<Profile>) databaseClass.profileDao().getAllData();
 
         for (int i = 0; i < profileInfo.size(); i++) {
             Log.d("Profile Sefiso", "id" + profileInfo.get(i).getKeys() + "Username" + profileInfo.get(i).getUsername() + "Password" + profileInfo.get(i).getPassword() + "Server" + profileInfo.get(i).getServer() + "Port" + profileInfo.get(i).getPort() + "Protocol" + profileInfo.get(i).getProtocol() +

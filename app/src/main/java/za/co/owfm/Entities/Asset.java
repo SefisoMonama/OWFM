@@ -1,12 +1,16 @@
 package za.co.owfm.Entities;
 
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 @Entity(tableName = "asset")
 public class Asset {
 
-    private Long id;
+    @PrimaryKey(autoGenerate = true)
+    private Long keys;
+    @ColumnInfo(name = "ticketid")
     private String ticketId;
     private String requestId;
     private String ciName;
@@ -25,8 +29,19 @@ public class Asset {
     private String relationshipType;
     private String assetNotes;
 
-    public Long getId() {
-        return id;
+    public Asset(String ticketId, String requestId, String ciName, String ciId) {
+        this.ticketId = ticketId;
+        this.requestId = requestId;
+        this.ciName = ciName;
+        this.ciId = ciId;
+    }
+
+    public Asset() {
+        //
+    }
+
+    public Long getKeys() {
+        return keys;
     }
 
     public String getTicketId() {
@@ -97,8 +112,8 @@ public class Asset {
         return assetNotes;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setKeys(Long keys) {
+        this.keys = keys;
     }
 
     public void setTicketId(String ticketId) {

@@ -1,17 +1,44 @@
 package za.co.owfm.Entities;
 
+
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "people")
 public class People {
 
-    private Long ID;
+    @PrimaryKey(autoGenerate = true)
+    private Long key;
+    @ColumnInfo(name = "full_name")
     private String fullName;
+
+    @ColumnInfo(name = "last_name")
     private String lastName;
+
+    @ColumnInfo(name = "first_name")
     private String firstName;
+
+    @ColumnInfo(name = "person_id")
     private String personId;
+
+    @ColumnInfo(name = "company")
     private String company;
+
+    @ColumnInfo(name = "sync")
     private String sync;
 
-    public Long getID() {
-        return ID;
+    public People(String fullName, String lastName, String firstName, String personId, String company, String sync) {
+        this.fullName = fullName;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.personId = personId;
+        this.company = company;
+        this.sync = sync;
+    }
+
+    public Long getKey() {
+        return key;
     }
 
     public String getFullName() {
@@ -38,8 +65,8 @@ public class People {
         return sync;
     }
 
-    public void setID(Long iD) {
-        ID = iD;
+    public void setKey(Long iD) {
+        key = iD;
     }
 
     public void setFullName(String fullName) {

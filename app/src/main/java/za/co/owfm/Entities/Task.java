@@ -1,21 +1,60 @@
 package za.co.owfm.Entities;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "task")
 public class Task {
 
-    private Long id;
+    @PrimaryKey(autoGenerate = true)
+    private Long key;
+
+    @ColumnInfo(name = "name")
     private String name;
+
+    @ColumnInfo(name = "summary")
     private String summary;
+
+    @ColumnInfo(name = "notes")
     private String notes;
+
+    @ColumnInfo(name = "priority")
     private String priority;
+
+    @ColumnInfo(name = "task_id")
     private String taskId;
+
+    @ColumnInfo(name = "type")
     private String type;
+
+    @ColumnInfo(name = "status")
     private String status;
+
+    @ColumnInfo(name = "status_reason")
     private String statusReason;
+
+    @ColumnInfo(name = "ticket_id")
     private String ticketId;
+
+    @ColumnInfo(name = "sync")
     private String sync;
 
-    public Long getId() {
-        return id;
+    public Task(String name, String summary, String notes, String priority, String taskId, String type, String status, String statusReason, String ticketId, String sync) {
+        this.name = name;
+        this.summary = summary;
+        this.notes = notes;
+        this.priority = priority;
+        this.taskId = taskId;
+        this.type = type;
+        this.status = status;
+        this.statusReason = statusReason;
+        this.ticketId = ticketId;
+        this.sync = sync;
+    }
+
+    public Long getKey() {
+        return key;
     }
 
     public String getName() {
@@ -58,8 +97,8 @@ public class Task {
         return sync;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setKey(Long key) {
+        this.key = key;
     }
 
     public void setName(String name) {

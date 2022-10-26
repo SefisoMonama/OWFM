@@ -1,40 +1,104 @@
 package za.co.owfm.Entities;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "scan_default")
 public class ScanDefault {
 
-    private Long id;
+    @PrimaryKey(autoGenerate = true)
+    private Long key;
+
+    @ColumnInfo(name = "default_name")
     private String defaultName;
+
+    @ColumnInfo(name = "company")
     private String company;
+
+    @ColumnInfo(name = "gr_allow_access")
     private String grAllowAccess;
+
+    @ColumnInfo(name = "gr_force_tn")
     private String grForceTN;
+
+    @ColumnInfo(name = "gr_validate_tn")
     private String grValidateTN;
+
+    @ColumnInfo(name = "a_allow_access")
     private String aAllowAccess;
+
+    @ColumnInfo(name = "a_force_tn")
     private String aForceTN;
+
+    @ColumnInfo(name = "a_validate_tn")
     private String aValidateTN;
+
+    @ColumnInfo(name = "m_allow_access")
     private String mAllowAccess;
+
+    @ColumnInfo(name = "m_force_tn")
     private String mForceTN;
+
+    @ColumnInfo(name = "m_validate_tn")
     private String mValidateTN;
+
+    @ColumnInfo(name = "c_allow_access")
     private String cAllowAccess;
+
+    @ColumnInfo(name = "c_force_tn")
     private String cForceTN;
+
+    @ColumnInfo(name = "c_validate_tn")
     private String cValidateTN;
+
+    @ColumnInfo(name = "bf_allow_access")
     private String bfAllowAccess;
+
+    @ColumnInfo(name = "bf_force_tn")
     private String bfForceTN;
+
+    @ColumnInfo(name = "bf_validate_tn")
     private String bfValidateTN;
+
+    @ColumnInfo(name = "br_allow_access")
     private String brAllowAccess;
+
+    @ColumnInfo(name = "br_force_tn")
     private String brForceTN;
+
+    @ColumnInfo(name = "br_validate_tn")
     private String brValidateTN;
+
+    @ColumnInfo(name = "br_ep_allow_access")
     private String brEpAllowAccess;
+
+    @ColumnInfo(name = "br_ep_force_tn")
     private String brEpForceTN;
+
+    @ColumnInfo(name = "br_ep_Validate_tn")
     private String brEpValidateTN;
+
+    @ColumnInfo(name = "d_allow_access")
     private String dAllowAccess;
+
+    @ColumnInfo(name = "d_force_tn")
     private String dForceTN;
+
+    @ColumnInfo(name = "d_validate_tn")
     private String dValidateTN;
+
+    @ColumnInfo(name = "display_add_field")
     private String displayAddField;
+
+    @ColumnInfo(name = "force_add_field")
     private String forceAddField;
+
+    @ColumnInfo(name = "label_add_field")
     private String labelAddField;
 
-    public Long getId() {
-        return id;
+    public Long getKey() {
+        return key;
     }
 
     public String getDefaultName() {
@@ -57,39 +121,39 @@ public class ScanDefault {
         return grValidateTN;
     }
 
-    public String getaAllowAccess() {
+    public String getAAllowAccess() {
         return aAllowAccess;
     }
 
-    public String getaForceTN() {
+    public String getAForceTN() {
         return aForceTN;
     }
 
-    public String getaValidateTN() {
+    public String getAValidateTN() {
         return aValidateTN;
     }
 
-    public String getmAllowAccess() {
+    public String getMAllowAccess() {
         return mAllowAccess;
     }
 
-    public String getmForceTN() {
+    public String getMForceTN() {
         return mForceTN;
     }
 
-    public String getmValidateTN() {
+    public String getMValidateTN() {
         return mValidateTN;
     }
 
-    public String getcAllowAccess() {
+    public String getCAllowAccess() {
         return cAllowAccess;
     }
 
-    public String getcForceTN() {
+    public String getCForceTN() {
         return cForceTN;
     }
 
-    public String getcValidateTN() {
+    public String getCValidateTN() {
         return cValidateTN;
     }
 
@@ -129,15 +193,15 @@ public class ScanDefault {
         return brEpValidateTN;
     }
 
-    public String getdAllowAccess() {
+    public String getDAllowAccess() {
         return dAllowAccess;
     }
 
-    public String getdForceTN() {
+    public String getDForceTN() {
         return dForceTN;
     }
 
-    public String getdValidateTN() {
+    public String getDValidateTN() {
         return dValidateTN;
     }
 
@@ -153,8 +217,8 @@ public class ScanDefault {
         return labelAddField;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setKey(Long key) {
+        this.key = key;
     }
 
     public void setDefaultName(String defaultName) {
@@ -177,39 +241,39 @@ public class ScanDefault {
         this.grValidateTN = grValidateTN;
     }
 
-    public void setaAllowAccess(String aAllowAccess) {
+    public void setAAllowAccess(String aAllowAccess) {
         this.aAllowAccess = aAllowAccess;
     }
 
-    public void setaForceTN(String aForceTN) {
+    public void setAForceTN(String aForceTN) {
         this.aForceTN = aForceTN;
     }
 
-    public void setaValidateTN(String aValidateTN) {
+    public void setAValidateTN(String aValidateTN) {
         this.aValidateTN = aValidateTN;
     }
 
-    public void setmAllowAccess(String mAllowAccess) {
+    public void setMAllowAccess(String mAllowAccess) {
         this.mAllowAccess = mAllowAccess;
     }
 
-    public void setmForceTN(String mForceTN) {
+    public void setMForceTN(String mForceTN) {
         this.mForceTN = mForceTN;
     }
 
-    public void setmValidateTN(String mValidateTN) {
+    public void setMValidateTN(String mValidateTN) {
         this.mValidateTN = mValidateTN;
     }
 
-    public void setcAllowAccess(String cAllowAccess) {
+    public void setCAllowAccess(String cAllowAccess) {
         this.cAllowAccess = cAllowAccess;
     }
 
-    public void setcForceTN(String cForceTN) {
+    public void setCForceTN(String cForceTN) {
         this.cForceTN = cForceTN;
     }
 
-    public void setcValidateTN(String cValidateTN) {
+    public void setCValidateTN(String cValidateTN) {
         this.cValidateTN = cValidateTN;
     }
 
@@ -249,15 +313,15 @@ public class ScanDefault {
         this.brEpValidateTN = brEpValidateTN;
     }
 
-    public void setdAllowAccess(String dAllowAccess) {
+    public void setDAllowAccess(String dAllowAccess) {
         this.dAllowAccess = dAllowAccess;
     }
 
-    public void setdForceTN(String dForceTN) {
+    public void setDForceTN(String dForceTN) {
         this.dForceTN = dForceTN;
     }
 
-    public void setdValidateTN(String dValidateTN) {
+    public void setDValidateTN(String dValidateTN) {
         this.dValidateTN = dValidateTN;
     }
 

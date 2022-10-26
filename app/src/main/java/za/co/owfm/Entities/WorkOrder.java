@@ -1,9 +1,16 @@
 package za.co.owfm.Entities;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+
 import java.util.Date;
 
+@Entity(tableName = "workorder")
 public class WorkOrder {
-    private Long Id;
+
+    @PrimaryKey(autoGenerate = true)
+    private Long keys;
     private String workOrderId;
     private String company;
     private String customerName;
@@ -46,13 +53,25 @@ public class WorkOrder {
     private String appointment;
     private String sequence;
     private String lastModifiedDate;
-    private Date actualStartDate;
-    private Date actualEndDate;
-    private Date arrivalDate;
-    private Date completedDate;
+    //private Date actualStartDate;
+    //private Date actualEndDate;
+    //private Date arrivalDate;
+    //private Date completedDate;
 
-    public Long getId() {
-        return Id;
+    public WorkOrder() {
+
+    }
+
+    public WorkOrder(String workOrderId, String company, String customerName, String contact, String notes) {
+        this.workOrderId = workOrderId;
+        this.company = company;
+        this.customerName = customerName;
+        this.contact = contact;
+        this.notes = notes;
+    }
+
+    public Long getKeys() {
+        return keys;
     }
 
     public String getWorkOrderId() {
@@ -95,7 +114,7 @@ public class WorkOrder {
         return requestManager;
     }
 
-    public String getrMSupportGroupName() {
+    public String getRMSupportGroupName() {
         return rMSupportGroupName;
     }
 
@@ -223,7 +242,7 @@ public class WorkOrder {
         return lastModifiedDate;
     }
 
-    public Date getActualStartDate() {
+   /** public Date getActualStartDate() {
         return actualStartDate;
     }
 
@@ -237,10 +256,10 @@ public class WorkOrder {
 
     public Date getCompletedDate() {
         return completedDate;
-    }
+    }**/
 
-    public void setId(Long id) {
-        Id = id;
+    public void setKeys(Long keys) {
+        this.keys = keys;
     }
 
     public void setWorkOrderId(String workOrderId) {
@@ -410,7 +429,7 @@ public class WorkOrder {
     public void setLastModifiedDate(String lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
     }
-
+/**
     public void setActualStartDate(Date actualStartDate) {
         this.actualStartDate = actualStartDate;
     }
@@ -425,7 +444,9 @@ public class WorkOrder {
 
     public void setCompletedDate(Date completedDate) {
         this.completedDate = completedDate;
-    }
+    }**/
+
+
 
 
 }

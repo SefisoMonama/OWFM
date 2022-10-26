@@ -1,14 +1,36 @@
 package za.co.owfm.Entities;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "site")
 public class Site {
-    private Long id;
+
+    @PrimaryKey(autoGenerate = true)
+    private Long key;
+
+    @ColumnInfo(name = "company")
     private String company;
+
+    @ColumnInfo(name = "site")
     private String site;
+
+    @ColumnInfo(name = "scanner_tag")
     private String scannerTag;
+
+    @ColumnInfo(name = "type")
     private String type;
 
-    public Long getId() {
-        return id;
+    public Site(String company, String site, String scannerTag, String type) {
+        this.company = company;
+        this.site = site;
+        this.scannerTag = scannerTag;
+        this.type = type;
+    }
+
+    public Long getKey() {
+        return key;
     }
 
     public String getCompany() {
@@ -27,8 +49,8 @@ public class Site {
         return type;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setKey(Long key) {
+        this.key = key;
     }
 
     public void setCompany(String company) {

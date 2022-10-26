@@ -1,15 +1,36 @@
 package za.co.owfm.Entities;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "status_reason")
 public class StatusReason {
 
-    private Long id;
-    private String status;
+    @PrimaryKey(autoGenerate = true)
+    private Long key;
+
+    @ColumnInfo(name = "status_reason")
     private String statusReason;
+
+    @ColumnInfo(name = "ticket_id")
     private String ticketId;
+
+    @ColumnInfo(name = "status")
+    private String status;
+
+    @ColumnInfo(name = "sync")
     private String sync;
 
-    public Long getId() {
-        return id;
+    public StatusReason(String status, String statusReason, String ticketId, String sync) {
+        this.status = status;
+        this.statusReason = statusReason;
+        this.ticketId = ticketId;
+        this.sync = sync;
+    }
+
+    public Long getKey() {
+        return key;
     }
 
     public String getStatus() {
@@ -28,8 +49,8 @@ public class StatusReason {
         return sync;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setKey(Long key) {
+        this.key = key;
     }
 
     public void setStatus(String status) {

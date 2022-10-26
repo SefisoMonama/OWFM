@@ -1,14 +1,32 @@
 package za.co.owfm.Entities;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "product")
 public class Product {
 
-    private Long id;
+    @PrimaryKey(autoGenerate = true)
+    private Long key;
+
+    @ColumnInfo(name = "model_version_id")
     private String modelVersionId;
+
+    @ColumnInfo(name = "product_name")
     private String productName;
+
+    @ColumnInfo(name = "company")
     private String company;
 
-    public Long getId() {
-        return id;
+    public Product(String modelVersionId, String productName, String company) {
+        this.modelVersionId = modelVersionId;
+        this.productName = productName;
+        this.company = company;
+    }
+
+    public Long getKey() {
+        return key;
     }
 
     public String getModelVersionId() {
@@ -23,8 +41,8 @@ public class Product {
         return company;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setKey(Long key) {
+        this.key = key;
     }
 
     public void setModelVersionId(String modelVersionId) {

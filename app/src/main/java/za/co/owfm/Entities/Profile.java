@@ -14,7 +14,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
-@Entity(tableName = "Profile")
+@Entity(tableName = "profile")
 public class Profile {
 
     //Primary Key

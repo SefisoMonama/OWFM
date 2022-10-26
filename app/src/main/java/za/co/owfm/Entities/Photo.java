@@ -1,16 +1,35 @@
 package za.co.owfm.Entities;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "photo")
 public class Photo {
-    private Long id;
+
+    @PrimaryKey(autoGenerate = true)
+    private Long key;
+
+    @ColumnInfo(name = "ticket_id")
     private String ticketId;
+
+    @ColumnInfo(name = "type")
     private String type;
-    private byte[] Img;
+
+    @ColumnInfo(name = "image")
+    private byte[] image;
+
+    @ColumnInfo(name = "description")
     private String description;
+
+    @ColumnInfo(name = "sync")
     private String sync;
+
+    @ColumnInfo(name = "name")
     private String name;
 
-    public Long getId() {
-        return id;
+    public Long getKey() {
+        return key;
     }
 
     public String getTicketId() {
@@ -21,8 +40,8 @@ public class Photo {
         return type;
     }
 
-    public byte[] getImg() {
-        return Img;
+    public byte[] getImage() {
+        return image;
     }
 
     public String getDescription() {
@@ -37,8 +56,8 @@ public class Photo {
         return name;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setKey(Long key) {
+        this.key = key;
     }
 
     public void setTicketId(String ticketId) {
@@ -49,8 +68,8 @@ public class Photo {
         this.type = type;
     }
 
-    public void setImg(byte[] img) {
-        Img = img;
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 
     public void setDescription(String description) {

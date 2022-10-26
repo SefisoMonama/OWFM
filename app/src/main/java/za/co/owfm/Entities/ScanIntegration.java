@@ -1,38 +1,95 @@
 package za.co.owfm.Entities;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "scan_integration")
 public class ScanIntegration {
 
+    @PrimaryKey(autoGenerate = true)
+    private Long key;
 
-    private Long id;
+    @ColumnInfo(name = "company")
     private String company;
+
+    @ColumnInfo(name = "operator")
     private String operator;
+
+    @ColumnInfo(name = "serial_number")
     private String serialNumber;
+
+    @ColumnInfo(name = "site_store")
     private String siteStore;
+
+    @ColumnInfo(name = "room")
     private String room;
+
+    @ColumnInfo(name = "inventory_location")
     private String inventoryLocation;
+
+    @ColumnInfo(name = "po_ticket_number")
     private String poTicketNumber;
+
+    @ColumnInfo(name = "operation")
     private String operation;
+
+    @ColumnInfo(name = "floor")
     private String floor;
+
+    @ColumnInfo(name = "position")
     private String position;
+
+    @ColumnInfo(name = "tag_number")
     private String tagNumber;
+
+    @ColumnInfo(name = "ticket_number")
     private String ticketNumber;
+
+    @ColumnInfo(name = "site")
     private String site;
+
+    @ColumnInfo(name = "model_name")
     private String modelName;
+
+    @ColumnInfo(name = "model_name2")
     private String modelName2;
+
+    @ColumnInfo(name = "parent_serial_number")
     private String parentSerialNumber;
+
+    @ColumnInfo(name = "check_asset_exist")
     private String checkAssetExist;
+
+    @ColumnInfo(name = "inventory_Status_season")
     private String inventoryStatusReason;
+
+    @ColumnInfo(name = "asset_life_Cycle_status")
     private String assetLifeCycleStatus;
+
+    @ColumnInfo(name = "sync")
     private String Sync;
+
+    @ColumnInfo(name = "notes")
     private String notes;
+
+    @ColumnInfo(name = "ztext1")
     private String zText1;
+
+    @ColumnInfo(name = "ztext2")
     private String zText2;
+
+    @ColumnInfo(name = "ztext3")
     private String zText3;
+
+    @ColumnInfo(name = "planned_actual")
     private String plannedActual;
+
+    @ColumnInfo(name = "status")
     private String status;
 
-    public Long getId() {
-        return id;
+    public Long getKey() {
+        return key;
     }
 
     public String getCompany() {
@@ -119,15 +176,15 @@ public class ScanIntegration {
         return notes;
     }
 
-    public String getzText1() {
+    public String getZText1() {
         return zText1;
     }
 
-    public String getzText2() {
+    public String getZText2() {
         return zText2;
     }
 
-    public String getzText3() {
+    public String getZText3() {
         return zText3;
     }
 
@@ -139,8 +196,8 @@ public class ScanIntegration {
         return status;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setKey(Long key) {
+        this.key = key;
     }
 
     public void setCompany(String company) {

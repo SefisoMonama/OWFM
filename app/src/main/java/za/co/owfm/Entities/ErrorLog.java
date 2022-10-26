@@ -1,15 +1,36 @@
 package za.co.owfm.Entities;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "error_log")
 public class ErrorLog {
 
-    private Long id;
+    @PrimaryKey(autoGenerate = true)
+    private Long key;
+
+    @ColumnInfo(name = "type")
     private String type;
+
+    @ColumnInfo(name = "error")
     private String error;
+
+    @ColumnInfo(name = "source")
     private String source;
+
+    @ColumnInfo(name = "ticket_id")
     private String ticketId;
 
-    public Long getId() {
-        return id;
+    public ErrorLog(String type, String error, String source, String ticketId) {
+        this.type = type;
+        this.error = error;
+        this.source = source;
+        this.ticketId = ticketId;
+    }
+
+    public Long getKey() {
+        return key;
     }
 
     public String getType() {
@@ -28,8 +49,8 @@ public class ErrorLog {
         return ticketId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setKey(Long key) {
+        this.key = key;
     }
 
     public void setType(String type) {

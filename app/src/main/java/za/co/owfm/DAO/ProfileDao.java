@@ -8,10 +8,10 @@ import za.co.owfm.Entities.Profile;
 import java.util.List;
 
 @androidx.room.Dao
-public interface Dao {
+public interface ProfileDao {
 
     //Select all Data
-    @Query("select * from Profile")
+    @Query("select * from profile")
     List<Profile> getAllData();
 
     //Insert data

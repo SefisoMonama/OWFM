@@ -15,12 +15,13 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import za.co.owfm.Entities.Profile;
-import za.co.owfm.DAO.Dao;
+import za.co.owfm.DAO.ProfileDao;
 import za.co.owfm.Database.DatabaseClass;
 
 import com.example.owfm.R;
+import com.example.owfm.databinding.FragmentLoginBinding;
 
-import za.co.owfm.util.networkListener.ConnectivityReceiver;
+import za.co.owfm.util.networkListener.InternetReceiver;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -48,17 +49,6 @@ public class LoginFragment extends Fragment {
 
 
     private void setupUi() {
-
-        if(!isConnected()){
-            binding.networkStatusTextView.setText("Disconnected");
-            binding.networkStatusTextView.setBackgroundResource(R.color.red);
-        }else{
-            binding.networkStatusTextView.setText("Connected");
-            binding.networkStatusTextView.setBackgroundResource(R.color.green);
-        };
-
-        mInstance= this;
-
         //navigate to home screen
         binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +63,7 @@ public class LoginFragment extends Fragment {
         });
 
         //Network listener
-        broadcastReceiver = new ConnectivityReceiver();
+        broadcastReceiver = new InternetReceiver();
         internetStatus();
 
     }
@@ -103,8 +93,8 @@ public class LoginFragment extends Fragment {
 
         //check if data is correctly saved via logcat
         DatabaseClass databaseClass = DatabaseClass.getDB(requireActivity());
-        ArrayList<Profile> profileInfo = (ArrayList<Profile>) databaseClass.dao().getAllData();
-        Dao dao = databaseClass.dao();
+        ArrayList<Profile> profileInfo = (ArrayList<Profile>) databaseClass.profileDao().getAllData();
+        ProfileDao dao = databaseClass.profileDao();
         if (!username.isEmpty() && !password.isEmpty()) {
             for (int i = 0; i < profileInfo.size(); i++) {
                 if (Objects.equals(dao.getAllData().get(i).getUsername(), username) && Objects.equals(dao.getAllData().get(i).getPassword(), password)) {
@@ -118,6 +108,12 @@ public class LoginFragment extends Fragment {
 
     public void internetStatus() {
         requireActivity().registerReceiver(broadcastReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        requireActivity().unregisterReceiver(broadcastReceiver);
     }
 
     public boolean isConnected(){
