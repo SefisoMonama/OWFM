@@ -47,8 +47,12 @@ public class HomeScreenFragment extends Fragment {
     }
 
     private void setupUi() {
-        //navigating to login screen
-        binding.loginButton.setOnClickListener(view -> Navigation.findNavController(requireView()).navigate(R.id.action_homeScreenFragment_to_loginFragment));
+        //
+        Intent intent = getActivity().getIntent();
+        if (intent.getExtras() != null ){
+            String passedLoginToken = intent.getStringExtra("data");
+            binding.userfullnameTextview.setText(passedLoginToken);
+        }
 
         // When device back button is pressed navigate to home screen
         OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {

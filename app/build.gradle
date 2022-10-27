@@ -67,4 +67,15 @@ dependencies {
     //circular Image dependency
     implementation 'com.mikhaellopez:circularimageview:4.3.0'
 
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.8.1'
+
+    //(Gson) Converter library
+    implementation 'com.squareup.retrofit2:converter-gson:2.8.1'
+
+    //Http logger
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.6.0'
+
+
+
 }

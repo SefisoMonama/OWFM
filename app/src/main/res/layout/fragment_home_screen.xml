@@ -431,20 +431,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:menu="@menu/bottom_nav_menu" />
 
-        <Button
-            android:id="@+id/login_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/btn_round_corners_shape"
-            android:text="@string/login"
-            android:textColor="@color/white"
-            android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
