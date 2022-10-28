@@ -1,4 +1,4 @@
-package za.co.owfm.ui;
+package za.co.owfm.UI;
 
 import android.os.Bundle;
 
@@ -11,13 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.owfm.R;
-import com.example.owfm.databinding.FragmentSyncWorkOrderValuesBinding;
+import com.example.owfm.databinding.FragmentNewWorkOrderBinding;
 
-public class SyncWorkOrderValuesFragment extends Fragment {
+public class NewWorkOrderFragment extends Fragment {
 
-    FragmentSyncWorkOrderValuesBinding binding;
+    FragmentNewWorkOrderBinding binding;
 
-    public SyncWorkOrderValuesFragment() {
+    public NewWorkOrderFragment() {
         // Required empty public constructor
     }
 
@@ -25,28 +25,20 @@ public class SyncWorkOrderValuesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentSyncWorkOrderValuesBinding.inflate(getLayoutInflater());
+        binding=FragmentNewWorkOrderBinding.inflate(getLayoutInflater());
+        assert container != null;
+        container.clearDisappearingChildren();
         setupUi();
         return binding.getRoot();
     }
 
     private void setupUi(){
-        //add back button drawable on toolbar
-        binding.syncWorkOrderValuesToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-
-        //navigate to home when toolbar back button is clicked
-        binding.syncWorkOrderValuesToolbar.setOnClickListener(new View.OnClickListener() {
+        //add back button on toolbar
+        binding.newWorkOrderToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+        binding.newWorkOrderToolbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_syncWorkOrderValuesFragment_to_homeScreenFragment);
-            }
-        });
-
-        //navigate to home when home floating action button is clicked
-        binding.homeFromWOValuesFloatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_syncWorkOrderValuesFragment_to_homeScreenFragment);
+                Navigation.findNavController(view).navigate(R.id.action_newWorkOrderFragment_to_homeScreenFragment);
             }
         });
 
@@ -58,6 +50,7 @@ public class SyncWorkOrderValuesFragment extends Fragment {
             }
         };
         requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), callback);
+
 
     }
 }

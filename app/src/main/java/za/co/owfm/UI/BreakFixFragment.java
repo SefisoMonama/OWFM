@@ -1,4 +1,4 @@
-package za.co.owfm.ui;
+package za.co.owfm.UI;
 
 import android.os.Bundle;
 

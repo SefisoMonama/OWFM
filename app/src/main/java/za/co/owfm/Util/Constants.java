@@ -1,4 +1,4 @@
-package za.co.owfm.util;
+package za.co.owfm.Util;
 
 public class Constants {
 

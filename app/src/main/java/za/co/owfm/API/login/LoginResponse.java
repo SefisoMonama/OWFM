@@ -1,4 +1,4 @@
-package za.co.owfm.login;
+package za.co.owfm.API.login;
 
 public class LoginResponse {
 

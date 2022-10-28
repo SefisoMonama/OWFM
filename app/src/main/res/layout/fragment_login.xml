@@ -6,7 +6,7 @@
     android:id="@+id/login_fragment"
     android:layout_height="match_parent"
     android:background="@color/lightGrey"
-    tools:context="za.co.owfm.ui.LoginFragment">
+    tools:context="za.co.owfm.UI.LoginFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

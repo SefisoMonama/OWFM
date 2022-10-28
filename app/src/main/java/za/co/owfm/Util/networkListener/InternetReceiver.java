@@ -1,16 +1,10 @@
-package za.co.owfm.util.networkListener;
+package za.co.owfm.Util.networkListener;
 
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.widget.Toast;
-
-import androidx.lifecycle.MutableLiveData;
-
-import com.example.owfm.R;
-import com.example.owfm.databinding.FragmentLoginBinding;
 
 public class InternetReceiver extends BroadcastReceiver {
 

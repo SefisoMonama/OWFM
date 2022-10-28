@@ -1,9 +1,7 @@
-package za.co.owfm.ui;
+package za.co.owfm.UI;
 
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
@@ -21,22 +19,15 @@ import android.widget.Toast;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import za.co.owfm.Entities.Profile;
-import za.co.owfm.DAO.ProfileDao;
-import za.co.owfm.Database.DatabaseClass;
 
 import com.example.owfm.R;
 import com.example.owfm.databinding.FragmentLoginBinding;
 
-import za.co.owfm.login.ApiClient;
-import za.co.owfm.login.LoginRequest;
-import za.co.owfm.login.LoginResponse;
-import za.co.owfm.util.Constants;
-import za.co.owfm.util.networkListener.DialogInternetReceiver;
-import za.co.owfm.util.networkListener.InternetReceiver;
-
-import java.util.ArrayList;
-import java.util.Objects;
+import za.co.owfm.API.login.ApiClient;
+import za.co.owfm.API.login.LoginRequest;
+import za.co.owfm.API.login.LoginResponse;
+import za.co.owfm.Util.networkListener.DialogInternetReceiver;
+import za.co.owfm.Util.networkListener.InternetReceiver;
 
 public class LoginFragment extends Fragment {
 
@@ -164,28 +155,9 @@ public class LoginFragment extends Fragment {
         String username = binding.usernameEditText.getText().toString().trim();
         String password = binding.passwordEditText.getText().toString().trim();
 
-        LoginRequest loginRequest = new LoginRequest();
-        loginRequest.setUsername(username);
-        loginRequest.setPassword(password);
-
-        Call<LoginResponse> loginResponseCall = ApiClient.getUserService().userLogin(loginRequest);
-        loginResponseCall.enqueue(new Callback<LoginResponse>() {
-            @Override
-            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                if (response.isSuccessful()) {
-                    binding.loginProgressBar.setVisibility(View.GONE);
-                    dialog("Login successful", " Successfully logged in!", "OK");
-                } else {
-                    binding.loginProgressBar.setVisibility(View.GONE);
-                    dialog("Login Failure", "Login credentials didn't match any in our database - please make sure you entered the correct Username and Password", "OK");
-                }
-            }
-
-            @Override
-            public void onFailure(Call<LoginResponse> call, Throwable t) {
-                dialog("Login Failure", "Login credentials didn't match any in our database - please make sure you entered the correct Username and Password", "OK");
-            }
-        });
+        new ApiClient.getToken(username, password).execute();
+        final Handler handler = new Handler();
+        handler.postDelayed(() -> binding.loginProgressBar.setVisibility(View.GONE), 2000);
 
     }
 

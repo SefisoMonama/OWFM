@@ -1,13 +1,8 @@
-package za.co.owfm.ui;
+package za.co.owfm.UI;
 
-import android.app.Notification;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
@@ -16,12 +11,6 @@ import android.view.ViewGroup;
 
 import com.example.owfm.R;
 import com.example.owfm.databinding.FragmentSplashScreenBinding;
-
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
-
-import kotlinx.coroutines.CoroutineScope;
 
 public class SplashScreenFragment extends Fragment {
 

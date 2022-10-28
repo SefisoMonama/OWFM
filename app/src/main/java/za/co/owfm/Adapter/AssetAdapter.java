@@ -1,4 +1,4 @@
-package za.co.owfm.adapter;
+package za.co.owfm.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

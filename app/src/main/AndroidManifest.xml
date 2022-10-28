@@ -34,7 +34,7 @@
                 android:value="" />
         </activity>
 
-        <receiver android:name="za.co.owfm.util.networkListener.InternetReceiver"
+        <receiver android:name="za.co.owfm.Util.networkListener.InternetReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY.CHANGE"/>

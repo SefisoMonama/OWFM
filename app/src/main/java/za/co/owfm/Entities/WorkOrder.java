@@ -242,21 +242,23 @@ public class WorkOrder {
         return lastModifiedDate;
     }
 
-   /** public Date getActualStartDate() {
-        return actualStartDate;
-    }
-
-    public Date getActualEndDate() {
-        return actualEndDate;
-    }
-
-    public Date getArrivalDate() {
-        return arrivalDate;
-    }
-
-    public Date getCompletedDate() {
-        return completedDate;
-    }**/
+    /**
+     * public Date getActualStartDate() {
+     * return actualStartDate;
+     * }
+     * <p>
+     * public Date getActualEndDate() {
+     * return actualEndDate;
+     * }
+     * <p>
+     * public Date getArrivalDate() {
+     * return arrivalDate;
+     * }
+     * <p>
+     * public Date getCompletedDate() {
+     * return completedDate;
+     * }
+     **/
 
     public void setKeys(Long keys) {
         this.keys = keys;
@@ -430,23 +432,21 @@ public class WorkOrder {
         this.lastModifiedDate = lastModifiedDate;
     }
 /**
-    public void setActualStartDate(Date actualStartDate) {
-        this.actualStartDate = actualStartDate;
-    }
+ public void setActualStartDate(Date actualStartDate) {
+ this.actualStartDate = actualStartDate;
+ }
 
-    public void setActualEndDate(Date actualEndDate) {
-        this.actualEndDate = actualEndDate;
-    }
+ public void setActualEndDate(Date actualEndDate) {
+ this.actualEndDate = actualEndDate;
+ }
 
-    public void setArrivalDate(Date arrivalDate) {
-        this.arrivalDate = arrivalDate;
-    }
+ public void setArrivalDate(Date arrivalDate) {
+ this.arrivalDate = arrivalDate;
+ }
 
-    public void setCompletedDate(Date completedDate) {
-        this.completedDate = completedDate;
-    }**/
-
-
+ public void setCompletedDate(Date completedDate) {
+ this.completedDate = completedDate;
+ }**/
 
 
 }

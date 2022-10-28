@@ -1,12 +1,9 @@
-package za.co.owfm.util.networkListener;
-
-import static java.security.AccessController.getContext;
+package za.co.owfm.Util.networkListener;
 
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.widget.Toast;
 
 public class DialogInternetReceiver extends BroadcastReceiver {
     @Override
