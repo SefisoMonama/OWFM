@@ -3,12 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="za.co.owfm.UI.NewWorkOrderFragment">
+    tools:context="za.co.owfm.UI.GoodsReceivedFragment">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/newWorkOrder_toolbar"
+        android:id="@+id/goodsReceived_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
@@ -20,16 +19,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="New Work Order"/>
+        app:title="Goods Received"/>
 
     <ImageView
         android:id="@+id/metaWeave_imageView"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:src="@drawable/metaweave_logo"
-        app:layout_constraintTop_toBottomOf="@id/newWorkOrder_toolbar"
-        app:layout_constraintEnd_toEndOf="@id/newWorkOrder_toolbar"
-        app:layout_constraintStart_toStartOf="@id/newWorkOrder_toolbar"
+        app:layout_constraintTop_toBottomOf="@id/goodsReceived_toolbar"
+        app:layout_constraintEnd_toEndOf="@id/goodsReceived_toolbar"
+        app:layout_constraintStart_toStartOf="@id/goodsReceived_toolbar"
         android:layout_marginTop="12dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

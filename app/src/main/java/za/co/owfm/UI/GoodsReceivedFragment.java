@@ -11,13 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.owfm.R;
-import com.example.owfm.databinding.FragmentBreakFixBinding;
+import com.example.owfm.databinding.FragmentGoodsReceivedBinding;
 
-public class BreakFixFragment extends Fragment {
+public class GoodsReceivedFragment extends Fragment {
 
-    FragmentBreakFixBinding binding;
+    FragmentGoodsReceivedBinding binding;
 
-    public BreakFixFragment() {
+    public GoodsReceivedFragment() {
         // Required empty public constructor
     }
 
@@ -25,17 +25,17 @@ public class BreakFixFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentBreakFixBinding.inflate(getLayoutInflater());
+        binding = FragmentGoodsReceivedBinding.inflate(getLayoutInflater());
         setupUi();
         return binding.getRoot();
     }
 
-    private void setupUi(){
+    private void setupUi() {
         //add back button drawable on toolbar
-        binding.breakFixToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+        binding.goodsReceivedToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
 
         //navigate to home when toolbar back button is clicked
-        binding.breakFixToolbar.setOnClickListener(view -> Navigation.findNavController(view).navigate(R.id.homeScreenFragment));
+        binding.goodsReceivedToolbar.setOnClickListener(view -> Navigation.findNavController(view).navigate(R.id.homeScreenFragment));
 
         // When device back button is pressed navigate to home screen
         OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {
@@ -45,7 +45,6 @@ public class BreakFixFragment extends Fragment {
             }
         };
         requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), callback);
-
 
     }
 }

@@ -1,40 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:tool="http://schemas.android.com/apk/res-auto">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <item
-        tool:showAsAction="ifRoom"
         android:id="@+id/audit_item"
+        android:icon="@drawable/ic_wifi_off"
         android:title="Audit" />
 
 
     <item
         android:id="@+id/breakFix_item"
-        android:title="Break Fix" />
+        android:title="Break Fix"
+        android:icon="@drawable/ic_settings"
+        />
 
     <item
         android:id="@+id/breakReplace_item"
+        android:icon="@drawable/ic_settings"
         android:title="Break Replace" />
 
     <item
         android:id="@+id/change_item"
+        android:icon="@drawable/ic_settings"
         android:title="Change" />
 
     <item
         android:id="@+id/dispose_item"
+        android:icon="@drawable/ic_settings"
         android:title="Dispose" />
 
     <item
         android:id="@+id/goodsReceived_item"
+        android:icon="@drawable/ic_settings"
         android:title="Goods Received" />
 
     <item
         android:id="@+id/move_item"
+        android:icon="@drawable/ic_settings"
         android:title="Move" />
 
     <item
-        android:id="@+id/ReturnLoan_item"
+        android:id="@+id/returnLoan_item"
+        android:icon="@drawable/ic_settings"
         android:title="Return/Loan" />
 
 </menu>

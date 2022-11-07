@@ -8,12 +8,15 @@ import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.owfm.R;
 import com.example.owfm.databinding.FragmentHomeScreenBinding;
@@ -39,6 +42,7 @@ public class HomeScreenFragment extends Fragment {
     }
 
     private void setupUi() {
+
         //
         Intent intent = getActivity().getIntent();
         if (intent.getExtras() != null ){
@@ -59,6 +63,40 @@ public class HomeScreenFragment extends Fragment {
         binding.sideDrawerIconImageView.setOnClickListener(
                 view -> binding.drawerLayout.openDrawer(GravityCompat.START));
 
+        //navigate side drawer
+        binding.sideDrawerNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                binding.drawerLayout.closeDrawer(GravityCompat.START);
+                switch (item.getItemId()){
+                        case R.id.audit_item:
+                            Navigation.findNavController(requireView()).navigate(R.id.action_homeScreenFragment_to_auditFragment);
+                        break;
+                    case R.id.breakFix_item:
+                        Navigation.findNavController(requireView()).navigate(R.id.action_homeScreenFragment_to_breakFixFragment);
+                        return true;
+                    case R.id.breakReplace_item:
+                        Navigation.findNavController(requireView()).navigate(R.id.action_homeScreenFragment_to_breakReplaceFragment);
+                        return true;
+                    case R.id.change_item:
+                        Navigation.findNavController(requireView()).navigate(R.id.action_homeScreenFragment_to_changeFragment);
+                        return true;
+                    case R.id.dispose_item:
+                        Navigation.findNavController(requireView()).navigate(R.id.action_homeScreenFragment_to_disposeFragment);
+                        return true;
+                    case R.id.goodsReceived_item:
+                        Navigation.findNavController(requireView()).navigate(R.id.action_homeScreenFragment_to_goodsReceivedFragment);
+                        return true;
+                    case R.id.move_item:
+                        Navigation.findNavController(requireView()).navigate(R.id.action_homeScreenFragment_to_moveFragment);
+                        return true;
+                    case R.id.returnLoan_item:
+                        Navigation.findNavController(requireView()).navigate(R.id.action_homeScreenFragment_to_returnLoanFragment);
+                        return true;
+                }
+                return true;
+            }
+        });
         //open side drawer when add scan button is clicked
         binding.scanOrderImageView.setOnClickListener(
                 view -> binding.drawerLayout.openDrawer(GravityCompat.START));
@@ -76,17 +114,7 @@ public class HomeScreenFragment extends Fragment {
         //open dialog to confirm scan order deletion
         binding.deleteScanOrderImageView.setOnClickListener(view -> Dialog("You are about to delete the selected scan order(s)."));
 
-        binding.sideDrawerNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                if (item.getItemId() == R.id.audit_item) {
-                    Navigation.findNavController(requireView()).navigate(R.id.action_homeScreenFragment_to_remedySettingsFragment);
-                }
-                return true;
-            }
-        });
-        //
+        //bottom navigation
         binding.bottomNavigation.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.home:
@@ -149,6 +177,13 @@ public class HomeScreenFragment extends Fragment {
 
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    private void replaceFragment(Fragment fragment){
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.homeScreenFragment, fragment);
+        fragmentTransaction.commit();
     }
 }
 

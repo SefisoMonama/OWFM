@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_navigation"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/homeScreenFragment">
 
     <fragment
         android:id="@+id/homeScreenFragment"
@@ -34,6 +34,30 @@
         <argument
             android:name="Username"
             app:argType="string" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_auditFragment"
+            app:destination="@id/auditFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_breakFixFragment"
+            app:destination="@id/breakFixFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_returnLoanFragment"
+            app:destination="@id/returnLoanFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_moveFragment"
+            app:destination="@id/moveFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_changeFragment"
+            app:destination="@id/changeFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_disposeFragment"
+            app:destination="@id/disposeFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_goodsReceivedFragment"
+            app:destination="@id/goodsReceivedFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_breakReplaceFragment"
+            app:destination="@id/breakReplaceFragment" />
     </fragment>
     <fragment
         android:id="@+id/splashScreenFragment"
@@ -147,5 +171,77 @@
         <action
             android:id="@+id/action_signUpFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/auditFragment"
+        android:name="za.co.owfm.UI.AuditFragment"
+        android:label="fragment_audit"
+        tools:layout="@layout/fragment_audit" >
+        <action
+            android:id="@+id/action_auditFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/breakFixFragment"
+        android:name="za.co.owfm.UI.BreakFixFragment"
+        android:label="fragment_break_fix"
+        tools:layout="@layout/fragment_break_fix" >
+        <action
+            android:id="@+id/action_breakFixFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/breakReplaceFragment"
+        android:name="za.co.owfm.UI.BreakReplaceFragment"
+        android:label="fragment_break_replace"
+        tools:layout="@layout/fragment_break_replace" >
+        <action
+            android:id="@+id/action_breakReplaceFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeFragment"
+        android:name="za.co.owfm.UI.ChangeFragment"
+        android:label="fragment_change"
+        tools:layout="@layout/fragment_change" >
+        <action
+            android:id="@+id/action_changeFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/disposeFragment"
+        android:name="za.co.owfm.UI.DisposeFragment"
+        android:label="fragment_dispose"
+        tools:layout="@layout/fragment_dispose" >
+        <action
+            android:id="@+id/action_disposeFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/goodsReceivedFragment"
+        android:name="za.co.owfm.UI.GoodsReceivedFragment"
+        android:label="fragment_goods_received"
+        tools:layout="@layout/fragment_goods_received" >
+        <action
+            android:id="@+id/action_goodsReceivedFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moveFragment"
+        android:name="za.co.owfm.UI.MoveFragment"
+        android:label="fragment_move"
+        tools:layout="@layout/fragment_move" >
+        <action
+            android:id="@+id/action_moveFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/returnLoanFragment"
+        android:name="za.co.owfm.UI.ReturnLoanFragment"
+        android:label="fragment_return_loan"
+        tools:layout="@layout/fragment_return_loan" >
+        <action
+            android:id="@+id/action_returnLoanFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
     </fragment>
 </navigation>

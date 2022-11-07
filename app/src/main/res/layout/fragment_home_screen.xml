@@ -9,13 +9,6 @@
     android:fitsSystemWindows="true"
     tools:context="za.co.owfm.UI.HomeScreenFragment">
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/sideDrawer_navigationView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/sidedrawer_header"
-        app:menu="@menu/side_drawer" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -432,6 +425,14 @@
                 app:menu="@menu/bottom_nav_menu" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/sideDrawer_navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/sidedrawer_header"
+        app:menu="@menu/side_drawer" />
 
 
 

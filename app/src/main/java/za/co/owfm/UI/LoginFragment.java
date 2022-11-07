@@ -155,9 +155,16 @@ public class LoginFragment extends Fragment {
         String username = binding.usernameEditText.getText().toString().trim();
         String password = binding.passwordEditText.getText().toString().trim();
 
-        new ApiClient.getToken(username, password).execute();
-        final Handler handler = new Handler();
-        handler.postDelayed(() -> binding.loginProgressBar.setVisibility(View.GONE), 2000);
+        String jwt = String.valueOf(new ApiClient.getToken(username, password).execute());
+        Toast.makeText(requireContext(), "User credential Invalid", Toast.LENGTH_SHORT).show();
+
+        /**if (jwt.isEmpty()) {
+            binding.loginProgressBar.setVisibility(View.GONE);
+            Toast.makeText(requireContext(), "User credential Invalid", Toast.LENGTH_SHORT).show();
+            dialog("Login failure", "User credentials didn't match any in our database - please make sure you enter th e correct username and password combination", "CANCEL");
+        } else {
+            //Navigation.findNavController(requireView()).navigate(R.id.action_loginFragment_to_homeScreenFragment);
+        }**/
 
     }
 

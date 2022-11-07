@@ -42,7 +42,8 @@ public class ApiClient {
 
     public static class getToken extends AsyncTask<String,String,String> {
 
-        String token = "AR-JWT ";
+        String tokenPrefix = "AR-JWT ";
+        String token =" ";
         String username = "";
         String password = "";
         public getToken(String username, String password) {
@@ -83,7 +84,7 @@ public class ApiClient {
 
                 System.out.println(conn.getResponseCode());
                 System.out.println(conn.getResponseMessage());
-                System.out.println(token);
+                System.out.println(tokenPrefix+" "+token);
                 conn.disconnect();
             } catch (Exception e) {
                 System.out.println(">>" + e);
