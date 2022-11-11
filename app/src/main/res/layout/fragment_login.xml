@@ -8,14 +8,15 @@
     android:background="@color/lightGrey"
     tools:context="za.co.owfm.UI.LoginFragment">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="350dp"
         android:background="@drawable/constraint_botton_round_shape"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <ImageView
         android:id="@+id/imageView"
@@ -57,7 +58,7 @@
                     android:text="Login"
                     android:textAlignment="center"
                     android:textColor="@color/secondary"
-                    android:textSize="36sp"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
 
                 <com.google.android.material.progressindicator.LinearProgressIndicator
@@ -73,36 +74,35 @@
                 <AutoCompleteTextView
                     android:id="@+id/username_editText"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/edit_text_shape"
                     android:drawableStart="@drawable/ic_person"
                     android:drawablePadding="24dp"
                     android:hint="Username"
                     android:inputType="textAutoComplete"
-                    android:padding="12dp" />
+                    android:padding="8dp" />
 
                 <EditText
                     android:id="@+id/password_editText"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
                     android:background="@drawable/edit_text_shape"
                     android:drawableStart="@drawable/ic_logs_24"
                     android:drawablePadding="24dp"
                     android:hint="Password"
                     android:inputType="textPassword"
-                    android:padding="12dp" />
+                    android:padding="8dp" />
 
                 <Button
                     android:id="@+id/login_button"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
                     android:background="@drawable/btn_round_corners_shape"
                     android:text="Login"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
@@ -130,8 +130,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" Sign Up"
-            android:textStyle="bold"
-            android:textColor="@color/skyBlue"/>
+            android:textColor="@color/skyBlue"
+            android:textStyle="bold" />
 
 
     </LinearLayout>

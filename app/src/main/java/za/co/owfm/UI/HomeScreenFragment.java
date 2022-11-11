@@ -59,6 +59,14 @@ public class HomeScreenFragment extends Fragment {
         };
         requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), callback);
 
+        //open work order details
+        binding.tableData.setOnClickListener(view ->{
+            Navigation.findNavController(requireView()).navigate(R.id.action_homeScreenFragment_to_WODetailsFragment);
+        });
+
+        //remove default color on side drawer items
+        binding.sideDrawerNavigationView.setItemIconTintList(null);
+
         //open side drawer when burger menu is clicked
         binding.sideDrawerIconImageView.setOnClickListener(
                 view -> binding.drawerLayout.openDrawer(GravityCompat.START));

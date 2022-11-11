@@ -14,6 +14,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
+import javax.net.ssl.SSLContext;
+
 @Entity(tableName = "profile")
 public class Profile {
 
@@ -195,6 +197,11 @@ public class Profile {
             try {
                 byte[] postData = urlParameters.getBytes(StandardCharsets.UTF_8);
 
+
+
+                //SSLContext sslContext = SslUtils.getSslContextForCertificateFile(context, "BPClass2RootCA-sha2.cer");
+                //client.setSslSocketFactory(sslContext.getSocketFactory());
+
                 URL url = new URL("https://48.metaweave.co.za:13579/api/jwt/login");
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setDoOutput(true);
@@ -203,6 +210,7 @@ public class Profile {
                 conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
                 conn.setRequestProperty("charset", "utf-8");
                 conn.setRequestProperty("Content-Length", Integer.toString(postData.length));
+                conn.connect();
                 conn.setUseCaches(false);
 
                 try (DataOutputStream wr = new DataOutputStream(conn.getOutputStream())) {

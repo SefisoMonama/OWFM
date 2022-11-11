@@ -14,6 +14,10 @@
         android:background="?attr/colorPrimary"
         android:backgroundTint="@color/white"
         android:elevation="10dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:titleTextAppearance="@style/Toolbar.TitleText"
         android:minHeight="?attr/actionBarSize"
         android:textAlignment="center"
         android:theme="?attr/actionBarTheme"
@@ -24,9 +28,9 @@
 
     <ImageView
         android:id="@+id/metaWeave_imageView"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
         android:src="@drawable/metaweave_logo"
         app:layout_constraintEnd_toEndOf="@id/remedySettings_toolbar"
         app:layout_constraintStart_toStartOf="@id/remedySettings_toolbar"
@@ -34,9 +38,12 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView3"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="12dp"
         android:background="@color/white"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toTopOf="@+id/saveSyncRemedySettings_buttons"
@@ -48,18 +55,22 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="16dp">
+            android:layout_height="match_parent">
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="12dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -71,7 +82,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
+                        android:layout_margin="8dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -97,7 +108,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
+                        android:layout_margin="8dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -115,15 +126,15 @@
                             android:layout_weight="4"
                             android:background="@drawable/edit_text_shape"
                             android:hint="password"
-                            android:paddingStart="12dp"
                             android:inputType="textPassword"
-                            android:padding="8dp" />
+                            android:padding="8dp"
+                            android:paddingStart="12dp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
+                        android:layout_margin="8dp"
                         android:orientation="vertical"
                         android:visibility="gone">
 
@@ -151,7 +162,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
+                        android:layout_margin="8dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -178,7 +189,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
+                        android:layout_margin="8dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -197,15 +208,15 @@
                             android:background="@drawable/edit_text_shape"
                             android:enabled="false"
                             android:inputType="text"
-                            android:paddingStart="12dp"
                             android:padding="8dp"
+                            android:paddingStart="12dp"
                             android:text="https" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
+                        android:layout_margin="8dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -257,7 +268,7 @@
                         android:id="@+id/loginPath_linearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
+                        android:layout_margin="8dp"
                         android:orientation="vertical"
                         android:visibility="gone">
 
@@ -286,7 +297,7 @@
                         android:id="@+id/logoutPath_linearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
+                        android:layout_margin="8dp"
                         android:orientation="vertical"
                         android:visibility="gone">
 
@@ -315,7 +326,7 @@
                         android:id="@+id/versionPath_linearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
+                        android:layout_margin="8dp"
                         android:orientation="vertical"
                         android:visibility="gone">
 
@@ -344,7 +355,7 @@
                         android:id="@+id/prefix_linearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
+                        android:layout_margin="8dp"
                         android:orientation="vertical"
                         android:visibility="gone">
 
@@ -380,6 +391,7 @@
         android:layout_marginBottom="24dp"
         android:background="@drawable/btn_round_corners_shape"
         android:enabled="true"
+        android:textAllCaps="false"
         android:text="Save/Sync"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/bottomNav_linearLayout"

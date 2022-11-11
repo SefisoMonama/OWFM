@@ -1,5 +1,6 @@
 package za.co.owfm.UI;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 
 import androidx.activity.OnBackPressedCallback;
@@ -54,7 +55,7 @@ public class RemedySettingsFragment extends Fragment {
             //save data locally by calling appropriate defined functions
             confirmDataLoad();
             saveDataLocally();
-            getLocalData();
+
 
             //new Profile.getToken().execute();
         });
@@ -173,10 +174,14 @@ public class RemedySettingsFragment extends Fragment {
         if (!username.isEmpty() && !password.isEmpty() && password.length() >= 8 && !port.isEmpty() && !server.isEmpty() && !protocol.isEmpty() && !hostServer.isEmpty()) {
             DatabaseClass databaseClass = DatabaseClass.getDB(requireActivity());
             databaseClass.profileDao().insertAllData(
-                    new Profile(username, password, server, port, protocol, hostServer, loginPath, logoutPath, versionPath, prefix, jwt)
-            );
+                  new Profile(username, password, server, port, protocol, hostServer, loginPath, logoutPath, versionPath, prefix, jwt)
+           );
 
             Toast.makeText(getActivity(), "Profile info successfully saved!", Toast.LENGTH_SHORT).show();
+            dialog("Profile successfully saved!", "Your profile info was successfully saved and synced.", "CONTINUE");
+        }else{
+            Toast.makeText(getActivity(), "Profile info successfully saved!", Toast.LENGTH_SHORT).show();
+            dialog("Profile failed!", "Profile info couldn't be saved/synced.", "Ok");
         }
     }
 
@@ -207,6 +212,19 @@ public class RemedySettingsFragment extends Fragment {
         binding.logoutPathLinearLayout.setVisibility(View.GONE);
         binding.versionPathLinearLayout.setVisibility(View.GONE);
         binding.prefixLinearLayout.setVisibility(View.GONE);
+    }
+
+    private void dialog (String title, String message, String positiveButton){
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.setCancelable(true);
+        builder.setPositiveButton(
+                positiveButton, (dialogInterface, i) ->
+                        dialogInterface.dismiss());
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }
 

@@ -13,7 +13,7 @@ import java.util.List;
 public interface ScanIntegrationDao {
 
     @Insert
-    void insert(ScanIntegration scanIntegration);
+    void insertScanIntergration(ScanIntegration scanIntegration);
 
     @Query("SELECT * FROM scan_integration")
     LiveData<List<ScanIntegration>> getScanIntegrations();

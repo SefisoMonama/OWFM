@@ -13,9 +13,13 @@
         android:background="?attr/colorPrimary"
         android:backgroundTint="@color/white"
         android:elevation="10dp"
+        app:titleTextAppearance="@style/Toolbar.TitleText"
         android:minHeight="?attr/actionBarSize"
         android:textAlignment="center"
         android:theme="?attr/actionBarTheme"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -23,9 +27,9 @@
 
     <ImageView
         android:id="@+id/metaWeave_imageView"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
         android:src="@drawable/metaweave_logo"
         app:layout_constraintEnd_toEndOf="@id/audit_toolbar"
         app:layout_constraintStart_toStartOf="@id/audit_toolbar"
@@ -34,14 +38,18 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
         android:elevation="16dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/saveScan_button"
         app:layout_constraintTop_toBottomOf="@id/metaWeave_imageView"
         app:strokeColor="@color/black"
         app:strokeWidth="1dp">
@@ -55,7 +63,13 @@
                 android:id="@+id/scrollView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -72,7 +86,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
+                        android:layout_margin="8dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -98,7 +112,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
+                        android:layout_margin="8dp"
+                        android:gravity="center"
                         android:orientation="horizontal">
 
                         <Button
@@ -106,12 +121,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="8"
-                            android:textAllCaps="false"
-                            android:padding="8dp"
                             android:elevation="16dp"
-                            app:backgroundTint="@color/lightGrey"
+                            android:padding="8dp"
                             android:text="Serial Number:"
-                            android:textColor="@color/black" />
+                            android:textAllCaps="false"
+                            android:textColor="@color/black"
+                            app:backgroundTint="@color/lightGrey" />
 
                         <EditText
                             android:id="@+id/serialNumber_editText"
@@ -122,14 +137,14 @@
                             android:background="@drawable/audit_edit_text"
                             android:hint="0000000"
                             android:inputType="number"
-                            android:padding="8dp"
                             android:paddingStart="12dp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
+                        android:layout_margin="8dp"
+                        android:gravity="center"
                         android:orientation="horizontal">
 
                         <Button
@@ -137,12 +152,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="8"
-                            android:textAllCaps="false"
-                            android:padding="8dp"
-                            app:backgroundTint="@color/lightGrey"
-                            android:text="Tag Number:"
                             android:elevation="16dp"
-                            android:textColor="@color/black" />
+                            android:padding="8dp"
+                            android:text="Tag Number:"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black"
+                            app:backgroundTint="@color/lightGrey" />
 
                         <EditText
                             android:id="@+id/tagNumber_editText"
@@ -160,7 +175,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
+                        android:layout_margin="8dp"
+                        android:gravity="center"
                         android:orientation="horizontal">
 
                         <Button
@@ -168,12 +184,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="8"
-                            android:textAllCaps="false"
                             android:elevation="16dp"
-                            app:backgroundTint="@color/lightGrey"
                             android:padding="8dp"
                             android:text="Location:"
-                            android:textColor="@color/black" />
+                            android:textAllCaps="false"
+                            android:textColor="@color/black"
+                            app:backgroundTint="@color/lightGrey" />
 
                         <EditText
                             android:id="@+id/location_editText"
@@ -182,7 +198,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_weight="4"
                             android:background="@drawable/audit_edit_text"
-                            android:inputType="textPassword"
+                            android:inputType="text"
                             android:padding="8dp"
                             android:paddingStart="12dp" />
                     </LinearLayout>
@@ -191,7 +207,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
+                        android:layout_margin="8dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -205,7 +221,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/hostserver_editText"
+                            android:id="@+id/product_editText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="4"
@@ -219,8 +235,10 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
-                        android:orientation="vertical">
+                        android:layout_margin="8dp"
+                        android:layout_marginBottom="12dp"
+                        android:orientation="vertical"
+                        android:paddingBottom="8dp">
 
                         <TextView
                             android:id="@+id/notes_textView"
@@ -246,29 +264,6 @@
 
                 </LinearLayout>
             </ScrollView>
-
-            <com.budiyev.android.codescanner.CodeScannerView
-                android:id="@+id/serialNumberScanner_View"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:visibility="gone"
-                app:frameColor="@color/skyBlue"
-                app:layout_constraintBottom_toBottomOf="@id/scrollView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <com.budiyev.android.codescanner.CodeScannerView
-                android:id="@+id/tagNumberScanner_View"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:visibility="gone"
-                app:frameColor="@color/skyBlue"
-                app:layout_constraintBottom_toBottomOf="@id/scrollView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
@@ -277,24 +272,26 @@
         android:id="@+id/saveScan_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="24dp"
         android:text="Save Scan"
-        android:layout_marginTop="8dp"
+        android:background="@drawable/btn_round_corners_shape"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/materialCardView"
-        app:layout_constraintStart_toStartOf="@id/materialCardView"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="581dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/close_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Close"
         android:layout_marginStart="8dp"
-        android:textColor="@color/white"
+        android:text="Close"
         android:textAllCaps="false"
+        android:background="@drawable/btn_round_corners_shape"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/saveScan_button"
-        app:layout_constraintStart_toEndOf="@id/saveScan_button"
-        app:layout_constraintTop_toTopOf="@+id/saveScan_button" />
+        app:layout_constraintStart_toEndOf="@+id/saveScan_button"
+        app:layout_constraintTop_toTopOf="@+id/saveScan_button"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

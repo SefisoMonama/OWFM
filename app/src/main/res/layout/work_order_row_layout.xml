@@ -59,10 +59,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
-                    android:gravity="center_horizontal"
+                   android:gravity="center_horizontal"
                     android:padding="10dp"
-                    android:text="@string/summary"
+                    android:text="@string/Assigned"
                     android:textColor="@color/black" />
             </TableRow>
         </TableLayout>

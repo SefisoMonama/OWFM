@@ -58,6 +58,18 @@
         <action
             android:id="@+id/action_homeScreenFragment_to_breakReplaceFragment"
             app:destination="@id/breakReplaceFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_WODetailsFragment"
+            app:destination="@id/WODetailsFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_WOPictureFragment"
+            app:destination="@id/WOPictureFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_WOAssetsFragment"
+            app:destination="@id/WOAssetsFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_WOSignatureFragment"
+            app:destination="@id/WOSignatureFragment" />
     </fragment>
     <fragment
         android:id="@+id/splashScreenFragment"
@@ -243,5 +255,62 @@
         <action
             android:id="@+id/action_returnLoanFragment_to_homeScreenFragment"
             app:destination="@id/homeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/WODetailsFragment"
+        android:name="za.co.owfm.UI.WO.WODetailsFragment"
+        android:label="fragment_w_o_deatails"
+        tools:layout="@layout/fragment_w_o_deatails" >
+        <action
+            android:id="@+id/action_WODetailsFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+        <action
+            android:id="@+id/action_WODetailsFragment_to_WOPictureFragment"
+            app:destination="@id/WOPictureFragment" />
+        <action
+            android:id="@+id/action_WODetailsFragment_to_WOSignatureFragment"
+            app:destination="@id/WOSignatureFragment" />
+        <action
+            android:id="@+id/action_WODetailsFragment_to_WOAssetsFragment"
+            app:destination="@id/WOAssetsFragment" />
+        <action
+            android:id="@+id/action_WODetailsFragment_to_WOPictureFragment2"
+            app:destination="@id/WOPictureFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/WOAssetsFragment"
+        android:name="za.co.owfm.UI.WO.WOAssetsFragment"
+        android:label="fragment_w_o_assets"
+        tools:layout="@layout/fragment_w_o_assets" >
+        <action
+            android:id="@+id/action_WOAssetsFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+        <action
+            android:id="@+id/action_WOAssetsFragment_to_WODetailsFragment"
+            app:destination="@id/WODetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/WOPictureFragment"
+        android:name="za.co.owfm.UI.WO.WOPictureFragment"
+        android:label="fragment_w_o_picture"
+        tools:layout="@layout/fragment_w_o_picture" >
+        <action
+            android:id="@+id/action_WOPictureFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+        <action
+            android:id="@+id/action_WOPictureFragment_to_WODetailsFragment"
+            app:destination="@id/WODetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/WOSignatureFragment"
+        android:name="za.co.owfm.UI.WO.WOSignatureFragment"
+        android:label="fragment_w_o_signature"
+        tools:layout="@layout/fragment_w_o_signature" >
+        <action
+            android:id="@+id/action_WOSignatureFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+        <action
+            android:id="@+id/action_WOSignatureFragment_to_WODetailsFragment"
+            app:destination="@id/WODetailsFragment" />
     </fragment>
 </navigation>

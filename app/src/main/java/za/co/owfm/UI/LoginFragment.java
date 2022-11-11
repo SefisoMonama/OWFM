@@ -147,37 +147,47 @@ public class LoginFragment extends Fragment {
 
     @Override
     public void onPause() {
-        super.onPause();
         requireActivity().unregisterReceiver(broadcastReceiver);
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        requireActivity().registerReceiver(broadcastReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+        super.onResume();
     }
 
     public void login() {
         String username = binding.usernameEditText.getText().toString().trim();
         String password = binding.passwordEditText.getText().toString().trim();
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setUsername(username);
+        loginRequest.setPassword(password);
+        new ApiClient.getToken(username, password).execute();
 
-        String jwt = String.valueOf(new ApiClient.getToken(username, password).execute());
-        Toast.makeText(requireContext(), "User credential Invalid", Toast.LENGTH_SHORT).show();
+        //String jwt = String.valueOf(new ApiClient.getToken(username, password).execute());
+        /**
+         Toast.makeText(requireContext(), "User credential Invalid", Toast.LENGTH_SHORT).show();
 
-        /**if (jwt.isEmpty()) {
-            binding.loginProgressBar.setVisibility(View.GONE);
-            Toast.makeText(requireContext(), "User credential Invalid", Toast.LENGTH_SHORT).show();
-            dialog("Login failure", "User credentials didn't match any in our database - please make sure you enter th e correct username and password combination", "CANCEL");
-        } else {
-            //Navigation.findNavController(requireView()).navigate(R.id.action_loginFragment_to_homeScreenFragment);
-        }**/
+         if (jwt.isEmpty()) {
+         binding.loginProgressBar.setVisibility(View.GONE);
+         Toast.makeText(requireContext(), "User credential Invalid", Toast.LENGTH_SHORT).show();
+         dialog("Login failure", "User credentials didn't match any in our database - please make sure you enter th e correct username and password combination", "CANCEL");
+         } else {
+         Navigation.findNavController(requireView()).navigate(R.id.action_loginFragment_to_homeScreenFragment);
+         }**/
+         }
 
+        private void dialog (String title, String message, String positiveButton){
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            builder.setTitle(title);
+            builder.setMessage(message);
+            builder.setCancelable(true);
+            builder.setPositiveButton(
+                    positiveButton, (dialogInterface, i) ->
+                            dialogInterface.dismiss());
+
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+        }
     }
-
-    private void dialog(String title, String message, String positiveButton) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle(title);
-        builder.setMessage(message);
-        builder.setCancelable(true);
-        builder.setPositiveButton(
-                positiveButton, (dialogInterface, i) ->
-                        dialogInterface.dismiss());
-
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-    }
-}

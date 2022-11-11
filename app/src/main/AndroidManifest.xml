@@ -32,6 +32,7 @@
             android:name="za.co.owfm.MainActivity"
             android:configChanges="orientation"
             android:exported="true"
+            android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.OWFM.NoActionBar">
             <intent-filter>

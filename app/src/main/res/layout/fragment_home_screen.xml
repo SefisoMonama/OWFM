@@ -29,7 +29,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:logo="@drawable/owfm_radiotower"
             app:menu="@menu/home_menu_item"
-            app:title="Home" />
+            app:title="Home"
+            app:titleTextAppearance="@style/Toolbar.TitleText"/>
 
         <TextView
             android:id="@+id/userfullname_textview"
@@ -37,6 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:background="@drawable/btn_round_corners_shape"
+            android:drawablePadding="8dp"
             android:elevation="8dp"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
@@ -47,81 +49,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/home_toolbar" />
 
-        <LinearLayout
-            android:id="@+id/network_linearlayout"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_marginTop="24dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-
-            android:paddingStart="24dp"
-            app:layout_constraintEnd_toEndOf="@+id/userfullname_textview"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/userfullname_textview">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:paddingEnd="12dp"
-                android:text="@string/network" />
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:paddingEnd="12dp"
-                android:src="@drawable/network_on" />
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:paddingStart="12dp"
-                android:src="@drawable/gps_on" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/server_linearlayout"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_marginTop="12dp"
-            android:orientation="horizontal"
-            android:paddingStart="24dp"
-            app:layout_constraintEnd_toEndOf="@+id/network_linearlayout"
-            app:layout_constraintStart_toStartOf="@+id/network_linearlayout"
-            app:layout_constraintTop_toBottomOf="@id/network_linearlayout">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:paddingEnd="12dp"
-                android:text="Server   :" />
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:paddingEnd="12dp"
-                android:src="@drawable/network_off" />
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:paddingStart="12dp"
-                android:src="@drawable/camera_on" />
-        </LinearLayout>
-
         <View
             android:id="@+id/firsthorizontal_view"
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginTop="12dp"
             android:background="@color/lightGrey"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/server_linearlayout" />
+            app:layout_constraintTop_toBottomOf="@id/userfullname_textview" />
 
         <ImageView
             android:id="@+id/sideDrawerIcon_ImageView"
@@ -142,14 +81,14 @@
             app:layout_constraintEnd_toEndOf="@id/firsthorizontal_view"
             app:layout_constraintTop_toBottomOf="@id/firsthorizontal_view">
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/sync_ImageView"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
                 android:background="@drawable/btn_round_corners_shape"
                 android:src="@drawable/btn_sync_all" />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/refresh_imageView"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
@@ -169,260 +108,404 @@
             app:layout_constraintStart_toStartOf="@+id/sideDrawerIcon_ImageView"
             app:layout_constraintTop_toBottomOf="@id/sideDrawerIcon_ImageView" />
 
-        <TextView
-            android:id="@+id/workOder_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="Work Orders:"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
-            app:layout_constraintStart_toStartOf="@+id/secondhorizontal_view"
-            app:layout_constraintTop_toTopOf="@+id/linearLayout" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@id/secondhorizontal_view"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/secondhorizontal_view">
 
-            <ImageView
-                android:id="@+id/addOrder_ImageView"
-                android:layout_width="50dp"
-                android:layout_height="30dp"
-                android:contentDescription="@string/add_order"
-                android:src="@drawable/add_work_order" />
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0">
 
-            <ImageView
-                android:id="@+id/deleteOrder_imageView"
-                android:layout_width="45dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="8dp"
-                android:contentDescription="Delete order"
-                android:src="@drawable/basket"
-                app:tint="@color/lightGrey" />
-
-        </LinearLayout>
-
-
-        <TableLayout
-            android:id="@+id/wordOrderFieldHeads_linearLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:orientation="horizontal"
-            android:stretchColumns="1"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-            app:layout_constraintStart_toStartOf="@+id/workOder_textView"
-            app:layout_constraintTop_toBottomOf="@id/workOder_textView">
-
-            <!-- Table heading -->
-            <TableRow>
-
-                <TextView
-                    android:id="@+id/workOrderHead_tableHeading"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:background="@drawable/tableborder_shape"
-                    android:gravity="center_horizontal"
-                    android:padding="10dp"
-                    android:text="WORK ORDER"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/summary_tableHeading"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:background="@drawable/tableborder_shape"
-                    android:gravity="center_horizontal"
-                    android:padding="10dp"
-                    android:text="SUMMARY"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/statusHead_tableHeading"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:background="@drawable/tableborder_shape"
-                    android:gravity="center_horizontal"
-                    android:padding="10dp"
-                    android:text="STATUS"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-            </TableRow>
-
-            <!-- Table data -->
-            <TableRow android:id="@+id/table_data">
-
-                <com.facebook.shimmer.ShimmerFrameLayout
-                    android:id="@+id/shimmer"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="12">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical" />
+                        android:id="@+id/network_linearlayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="24dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="24dp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
-                    <include layout="@layout/work_order_details_placeholder">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingEnd="12dp"
+                            android:text="@string/network" />
 
-                    </include>
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:paddingEnd="12dp"
+                            android:src="@drawable/network_on" />
 
-
-                </com.facebook.shimmer.ShimmerFrameLayout>
-            </TableRow>
-
-            <!-- Table data -->
-            <TableRow android:id="@+id/table_data2">
-
-                <com.facebook.shimmer.ShimmerFrameLayout
-                    android:id="@+id/shimmer2"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="12">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical" />
-
-                    <include layout="@layout/work_order_details_placeholder">
-
-                    </include>
-
-
-                </com.facebook.shimmer.ShimmerFrameLayout>
-            </TableRow>
-
-            <TableRow android:id="@+id/table_data3">
-
-                <com.facebook.shimmer.ShimmerFrameLayout
-                    android:id="@+id/shimmer3"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="12">
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:paddingStart="12dp"
+                            android:src="@drawable/gps_on" />
+                    </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical" />
+                        android:id="@+id/server_linearlayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal"
+                        android:paddingStart="24dp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="@+id/network_linearlayout"
+                        app:layout_constraintStart_toStartOf="@+id/network_linearlayout"
+                        app:layout_constraintTop_toBottomOf="@id/network_linearlayout">
 
-                    <include layout="@layout/work_order_details_placeholder">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingEnd="12dp"
+                            android:text="Server   :" />
 
-                    </include>
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:paddingEnd="12dp"
+                            android:src="@drawable/network_off" />
 
-
-                </com.facebook.shimmer.ShimmerFrameLayout>
-            </TableRow>
-        </TableLayout>
-
-        <View
-            android:id="@+id/thirdhorizontal_view"
-            android:layout_width="0dp"
-            android:layout_height="2dp"
-            android:layout_marginBottom="200dp"
-            android:background="@color/black"
-            android:orientation="horizontal"
-            app:flow_verticalBias="0.7"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/secondhorizontal_view"
-            app:layout_constraintStart_toStartOf="@+id/secondhorizontal_view"
-            app:layout_constraintTop_toBottomOf="@+id/wordOrderFieldHeads_linearLayout" />
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:paddingStart="12dp"
+                            android:src="@drawable/camera_on" />
+                    </LinearLayout>
 
 
-        <TextView
-            android:id="@+id/scanOrder_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="Scan Orders:"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/Scans_linearLayout"
-            app:layout_constraintStart_toStartOf="@+id/thirdhorizontal_view"
-            app:layout_constraintTop_toTopOf="@+id/Scans_linearLayout" />
+                    <TextView
+                        android:id="@+id/workOder_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="8dp"
+                        android:text="WORK ORDERS:"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:id="@+id/Scans_linearLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@id/thirdhorizontal_view"
-            app:layout_constraintTop_toBottomOf="@id/thirdhorizontal_view">
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/scanOrder_ImageView"
-                android:layout_width="45dp"
-                android:layout_height="30dp"
-                android:contentDescription="@string/add_order"
-                android:src="@drawable/add_scan" />
+                        <ImageView
+                            android:id="@+id/addOrder_ImageView"
+                            android:layout_width="50dp"
+                            android:layout_height="24dp"
+                            android:contentDescription="@string/add_order"
+                            android:src="@drawable/add_work_order" />
 
-            <ImageView
-                android:id="@+id/deleteScanOrder_imageView"
-                android:layout_width="45dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="8dp"
-                android:contentDescription="Delete order"
-                android:src="@drawable/basket"
-                app:tint="@color/lightGrey" />
+                        <ImageView
+                            android:id="@+id/deleteOrder_imageView"
+                            android:layout_width="45dp"
+                            android:layout_height="24dp"
+                            android:contentDescription="Delete order"
+                            android:src="@drawable/basket"
+                            app:tint="@color/lightGrey" />
 
-        </LinearLayout>
+                    </LinearLayout>
 
-        <TextView
-            android:id="@+id/noScans_textView"
-            android:layout_width="wrap_content"
+
+                    <TableLayout
+                        android:id="@+id/wordOrderFieldHeads_linearLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal"
+                        android:stretchColumns="1"
+                        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+                        app:layout_constraintStart_toStartOf="@+id/workOder_textView"
+                        app:layout_constraintTop_toBottomOf="@id/workOder_textView">
+
+                        <!-- Table heading -->
+                        <TableRow>
+
+                            <TextView
+                                android:id="@+id/workOrderHead_tableHeading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:background="@drawable/tableborder_shape"
+                                android:gravity="center_horizontal"
+                                android:padding="10dp"
+                                android:text="Work orders"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/summary_tableHeading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:background="@drawable/tableborder_shape"
+                                android:gravity="center_horizontal"
+                                android:padding="10dp"
+                                android:text="Summary"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/statusHead_tableHeading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:background="@drawable/tableborder_shape"
+                                android:gravity="center_horizontal"
+                                android:padding="10dp"
+                                android:text="Status"
+                                android:textColor="@color/black" />
+                        </TableRow>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <TableRow
+                                            android:id="@+id/table_data"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+
+                                            <com.facebook.shimmer.ShimmerFrameLayout
+                                                android:id="@+id/shimmer"
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="12">
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:orientation="vertical" />
+
+                                                <include layout="@layout/work_order_row_layout">
+                                                </include>
+                                            </com.facebook.shimmer.ShimmerFrameLayout>
+                                        </TableRow>
+
+
+                                        <!-- Table data -->
+                                        <TableRow
+                                            android:id="@+id/table_data5"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+
+                                            <com.facebook.shimmer.ShimmerFrameLayout
+                                                android:id="@+id/shimmer5"
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="12">
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:orientation="vertical" />
+
+                                                <include layout="@layout/work_order_details_placeholder">
+
+                                                </include>
+
+
+                                            </com.facebook.shimmer.ShimmerFrameLayout>
+                                        </TableRow>
+
+                                        <TableRow
+                                            android:id="@+id/table_data6"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+
+                                            <com.facebook.shimmer.ShimmerFrameLayout
+                                                android:id="@+id/shimmer6"
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="12">
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:orientation="vertical" />
+
+                                                <include layout="@layout/work_order_details_placeholder">
+
+                                                </include>
+
+
+                                            </com.facebook.shimmer.ShimmerFrameLayout>
+                                        </TableRow>
+
+                                        <TableRow
+                                            android:id="@+id/table_data7"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+
+                                            <com.facebook.shimmer.ShimmerFrameLayout
+                                                android:id="@+id/shimmer7"
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="12">
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:orientation="vertical" />
+
+                                                <include layout="@layout/work_order_details_placeholder">
+
+                                                </include>
+
+
+                                            </com.facebook.shimmer.ShimmerFrameLayout>
+                                        </TableRow>
+
+
+                                    </LinearLayout>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                                <!-- Table data -->
+                            </ScrollView>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </TableLayout>
+
+                    <View
+                        android:id="@+id/thirdhorizontal_view"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_marginBottom="200dp"
+                        android:background="@color/black"
+                        android:orientation="horizontal"
+                        app:flow_verticalBias="0.7"
+                        app:layout_constraintEnd_toEndOf="@+id/wordOrderFieldHeads_linearLayout"
+                        app:layout_constraintStart_toStartOf="@+id/wordOrderFieldHeads_linearLayout"
+                        app:layout_constraintTop_toBottomOf="@+id/wordOrderFieldHeads_linearLayout" />
+
+
+                    <TextView
+                        android:id="@+id/scanOrder_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:text="SCAN ORDERS:"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/Scans_linearLayout"
+                        app:layout_constraintStart_toStartOf="@+id/thirdhorizontal_view"
+                        app:layout_constraintTop_toTopOf="@+id/Scans_linearLayout" />
+
+                    <LinearLayout
+                        android:id="@+id/Scans_linearLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="@id/thirdhorizontal_view"
+                        app:layout_constraintTop_toBottomOf="@id/thirdhorizontal_view">
+
+                        <ImageView
+                            android:id="@+id/scanOrder_ImageView"
+                            android:layout_width="54dp"
+                            android:layout_height="24dp"
+                            android:contentDescription="@string/add_order"
+                            android:src="@drawable/add_scan" />
+
+                        <ImageView
+                            android:id="@+id/deleteScanOrder_imageView"
+                            android:layout_width="45dp"
+                            android:layout_height="24dp"
+                            android:contentDescription="Delete order"
+                            android:src="@drawable/basket"
+                            app:tint="@color/lightGrey" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/noScans_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="No scans to display!"
+                        android:textColor="@color/lightGrey"
+                        app:layout_constraintEnd_toEndOf="@id/Scans_linearLayout"
+                        app:layout_constraintStart_toStartOf="@+id/scanOrder_textView"
+                        app:layout_constraintTop_toBottomOf="@+id/scanOrder_textView" />
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/owfm_redbarcode_scanner"
+                        app:layout_constraintEnd_toEndOf="@+id/noScans_textView"
+                        app:layout_constraintStart_toStartOf="@+id/noScans_textView"
+                        app:layout_constraintTop_toBottomOf="@+id/noScans_textView" />
+
+                    <ImageView
+                        android:id="@+id/metaWeaveLogo_imageView"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/metaweave_logo"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/server_linearlayout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/network_linearlayout"
+                        app:layout_constraintTop_toTopOf="@+id/network_linearlayout" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="No scans to display!"
-            android:textColor="@color/lightGrey"
-            app:layout_constraintEnd_toEndOf="@id/Scans_linearLayout"
-            app:layout_constraintStart_toStartOf="@+id/scanOrder_textView"
-            app:layout_constraintTop_toBottomOf="@+id/scanOrder_textView" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:src="@drawable/owfm_redbarcode_scanner"
-            app:layout_constraintEnd_toEndOf="@+id/noScans_textView"
-            app:layout_constraintStart_toStartOf="@+id/noScans_textView"
-            app:layout_constraintTop_toBottomOf="@+id/noScans_textView" />
-
-        <ImageView
-            android:id="@+id/metaWeaveLogo_imageView"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/metaweave_logo"
-            app:layout_constraintBottom_toBottomOf="@+id/server_linearlayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/network_linearlayout"
-            app:layout_constraintTop_toTopOf="@+id/network_linearlayout" />
-
-
-
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottom_navigation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:elevation="20dp"
-                app:labelVisibilityMode="labeled"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:menu="@menu/bottom_nav_menu" />
+            android:elevation="20dp"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/bottom_nav_menu" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -433,7 +516,6 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/sidedrawer_header"
         app:menu="@menu/side_drawer" />
-
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

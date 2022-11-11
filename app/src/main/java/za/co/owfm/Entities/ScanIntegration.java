@@ -2,6 +2,7 @@ package za.co.owfm.Entities;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "scan_integration")
@@ -87,6 +88,37 @@ public class ScanIntegration {
 
     @ColumnInfo(name = "status")
     private String status;
+
+    //didn't see any field for products
+    @ColumnInfo(name = "product")
+    private String product;
+
+
+    public ScanIntegration(String ticketNumber, String serialNumber, String tagNumber, String site, String notes, String product) {
+        this.ticketNumber = ticketNumber;
+        this.serialNumber = serialNumber;
+        this.tagNumber = tagNumber;
+        this.site = site;
+        this.notes = notes;
+        this.product = product;
+    }
+
+
+    @Ignore
+    public ScanIntegration(String ticketNumber, String serialNumber, String tagNumber, String site) {
+        this.ticketNumber = ticketNumber;
+        this.serialNumber = serialNumber;
+        this.tagNumber = tagNumber;
+        this.site = site;
+    }
+
+    public String getProduct() {
+        return product;
+    }
+
+    public void setProduct(String product) {
+        this.product = product;
+    }
 
     public Long getKey() {
         return key;
@@ -275,6 +307,7 @@ public class ScanIntegration {
     public void setAssetLifeCycleStatus(String assetLifeCycleStatus) {
         this.assetLifeCycleStatus = assetLifeCycleStatus;
     }
+
 
     public void setSync(String sync) {
         Sync = sync;

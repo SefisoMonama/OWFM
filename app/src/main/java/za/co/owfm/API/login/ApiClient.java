@@ -87,7 +87,7 @@ public class ApiClient {
                 System.out.println(tokenPrefix+" "+token);
                 conn.disconnect();
             } catch (Exception e) {
-                System.out.println(">>" + e);
+                System.out.println("Exception error" + e);
             }
 
             return null;
