@@ -50,30 +50,22 @@ public class AuditFragment extends Fragment {
                 confirmDataLoad();
                 saveDataLocally();
         });
+        binding.closeButton.setOnClickListener(view -> Navigation.findNavController(requireView()).navigate(R.id.action_auditFragment_to_homeScreenFragment));
 
         //add back button drawable on toolbar
         binding.auditToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
 
-        //navigate to home when toolbar back button is clicked
+          //navigate to home when toolbar back button is clicked
         binding.auditToolbar.setOnClickListener(view -> Navigation.findNavController(requireView()).navigate(R.id.action_auditFragment_to_homeScreenFragment));
 
-        binding.closeButton.setOnClickListener(view -> Navigation.findNavController(requireView()).navigate(R.id.action_auditFragment_to_homeScreenFragment));
-
         // When device back button is pressed navigate to home screen
-         /**
         OnBackPressedCallback callback = new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-                if (binding.serialNumberScannerView.getVisibility() == View.VISIBLE) {
-                    binding.serialNumberScannerView.setVisibility(View.GONE);
-                } else {
-                    mCodeScanner.stopPreview();
-                    Toast.makeText(requireContext(), "Use the close button to navigate back to home screen!", Toast.LENGTH_SHORT).show();
-                }
+                Navigation.findNavController(getView()).navigate(R.id.homeScreenFragment);
             }
         };
         requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), callback);
-        **/
 
         binding.serialNumberButton.setOnClickListener(view -> {
             binding.serialNumberEditText.requestFocus();

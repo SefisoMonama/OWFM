@@ -33,8 +33,13 @@ public class MoveFragment extends Fragment {
         //add back button drawable on toolbar
         binding.moveToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
 
+        //
+        binding.closeButton.setOnClickListener(view ->{
+            Navigation.findNavController(requireView()).navigate(R.id.action_moveFragment_to_homeScreenFragment);
+        });
+
         //navigate to home when toolbar back button is clicked
-        binding.moveToolbar.setOnClickListener(view -> Navigation.findNavController(requireView()).navigate(R.id.homeScreenFragment));
+        binding.moveToolbar.setOnClickListener(view -> Navigation.findNavController(requireView()).navigate(R.id.action_moveFragment_to_homeScreenFragment));
 
         // When device back button is pressed navigate to home screen
         OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {

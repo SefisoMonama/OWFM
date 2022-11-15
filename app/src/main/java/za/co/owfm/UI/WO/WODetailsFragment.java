@@ -1,5 +1,9 @@
 package za.co.owfm.UI.WO;
 
+import android.app.AlertDialog;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.activity.OnBackPressedCallback;
@@ -9,6 +13,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.owfm.R;
 import com.example.owfm.databinding.FragmentWODeatailsBinding;
@@ -68,5 +73,32 @@ public class WODetailsFragment extends Fragment {
         binding.assetsImageView.setOnClickListener(View ->{
             Navigation.findNavController(requireView()).navigate(R.id.action_WODetailsFragment_to_WOAssetsFragment);
         });
+
+        binding.timeManagementImageView.setOnClickListener( view ->{
+            Dialog();
+        });
+        //open the location map of the Uri specified
+        binding.coordinatesImageView.setOnClickListener(view ->{
+            Uri location = Uri.parse("");
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW, location);
+
+            try {
+               startActivity(mapIntent);
+            }catch(ActivityNotFoundException e){
+                Toast.makeText(requireContext(), "Coordinates not found" + e, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void Dialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setTitle("Time Management");
+        builder.setMessage("Details for time management(Settings) will be displayed here");
+        builder.setCancelable(true);
+        builder.setPositiveButton(
+                "OK", (dialogInterface, i) -> dialogInterface.dismiss());
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }

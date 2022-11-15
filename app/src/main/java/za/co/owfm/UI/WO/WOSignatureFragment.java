@@ -1,6 +1,7 @@
 package za.co.owfm.UI.WO;
 
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.activity.OnBackPressedCallback;
@@ -56,6 +57,9 @@ public class WOSignatureFragment extends Fragment {
         //clear signature from the view
         binding.clearSignatureButton.setOnClickListener(view ->{
                 binding.signatureView.clearCanvas();
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                binding.signatureImageView.resetPivot();
+            }
         });
 
         //load signature on the image view
@@ -63,13 +67,10 @@ public class WOSignatureFragment extends Fragment {
             Bitmap signBitmap = binding.signatureView.getSignatureBitmap();
             if (signBitmap != null){
                 binding.signatureImageView.setImageBitmap(signBitmap);
+                Toast.makeText(requireContext(), "Signature updated!", Toast.LENGTH_SHORT).show();
             }else {
                 Toast.makeText(requireContext(), "Signature view empty!", Toast.LENGTH_SHORT).show();
             }
         });
     }
-
-
-
-
 }

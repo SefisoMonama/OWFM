@@ -74,7 +74,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="8dp"
                     android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -102,8 +102,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="4"
-                            android:background="@drawable/audit_edit_text"
-                            android:hint="000000000"
                             android:inputType="text"
                             android:padding="8dp"
                             android:paddingStart="12dp" />
@@ -135,8 +133,8 @@
                             android:layout_marginStart="8dp"
                             android:layout_weight="4"
                             android:background="@drawable/audit_edit_text"
-                            android:hint="0000000"
-                            android:inputType="number"
+                            android:padding="8dp"
+                            android:inputType="text"
                             android:paddingStart="12dp" />
                     </LinearLayout>
 
@@ -166,7 +164,6 @@
                             android:layout_marginStart="8dp"
                             android:layout_weight="4"
                             android:background="@drawable/audit_edit_text"
-                            android:hint="000000"
                             android:inputType="number"
                             android:padding="8dp"
                             android:paddingStart="12dp" />
@@ -225,7 +222,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="4"
-                            android:background="@drawable/audit_edit_text"
                             android:hint="product"
                             android:inputType="text"
                             android:padding="8dp"
@@ -255,7 +251,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="4"
-                            android:background="@drawable/audit_edit_text"
                             android:hint="[Notes]:"
                             android:inputType="text"
                             android:padding="8dp"
@@ -272,14 +267,13 @@
         android:id="@+id/saveScan_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:layout_marginBottom="24dp"
-        android:text="Save Scan"
         android:background="@drawable/btn_round_corners_shape"
+        android:text="Save Scan"
         android:textAllCaps="false"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/materialCardView" />
 
     <Button
         android:id="@+id/close_button"

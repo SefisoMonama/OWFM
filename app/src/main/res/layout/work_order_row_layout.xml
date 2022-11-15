@@ -39,7 +39,7 @@
                     android:gravity="center_horizontal"
                     android:padding="10dp"
                     android:text="WO27507"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/mediumBlue" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -51,7 +51,7 @@
                     android:maxLength="10"
                     android:ellipsize="marquee"
                     android:text="Connection testing"
-                    android:textColor="@color/black"
+                    android:textColor="@color/mediumBlue"
                     android:singleLine="true" />
 
                 <TextView
@@ -62,7 +62,7 @@
                    android:gravity="center_horizontal"
                     android:padding="10dp"
                     android:text="@string/Assigned"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/mediumBlue" />
             </TableRow>
         </TableLayout>
 
