@@ -79,176 +79,186 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.5">
 
-                    <LinearLayout
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/username_text_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
                         android:layout_margin="8dp"
-                        android:orientation="vertical">
+                        app:boxCornerRadiusTopStart="8dp"
+                        android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/username_textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="8"
-                            android:padding="8dp"
-                            android:text="Username:" />
-
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/username_editText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
                             android:layout_weight="4"
-                            android:background="@drawable/edit_text_shape"
                             android:hint="Username"
                             android:inputType="text"
-                            android:padding="8dp"
                             android:paddingStart="12dp" />
-                    </LinearLayout>
 
-                    <LinearLayout
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/password_text_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
                         android:layout_margin="8dp"
-                        android:orientation="vertical">
+                        app:boxCornerRadiusTopStart="8dp"
+                        android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/password_textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="8"
-                            android:padding="8dp"
-                            android:text="Password:" />
-
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/password_editText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
                             android:layout_weight="4"
-                            android:background="@drawable/edit_text_shape"
-                            android:hint="password"
+                            android:hint="Password"
                             android:inputType="textPassword"
-                            android:padding="8dp"
                             android:paddingStart="12dp" />
-                    </LinearLayout>
 
-                    <LinearLayout
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/server_text_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        android:enabled="false"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        android:visibility="gone"
                         android:layout_margin="8dp"
-                        android:orientation="vertical"
-                        android:visibility="gone">
+                        app:boxCornerRadiusTopStart="8dp"
+                        android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/server_textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="8"
-                            android:padding="8dp"
-                            android:text="Server:" />
-
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/server_editText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
                             android:layout_weight="4"
-                            android:background="@drawable/edit_text_shape"
-                            android:enabled="false"
-                            android:inputType="textAutoComplete"
-                            android:padding="8dp"
-                            android:paddingStart="12dp"
-                            android:text="48" />
-                    </LinearLayout>
+                            android:hint="Server"
+                            android:inputType="text"
+                            android:paddingStart="12dp" />
 
-                    <LinearLayout
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/portNumber_text_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
                         android:layout_margin="8dp"
-                        android:orientation="vertical">
+                        app:boxCornerRadiusTopStart="8dp"
+                        android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/portNumber_textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="8"
-                            android:padding="8dp"
-                            android:text="Ports:" />
-
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/portNumber_editText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="4"
-                            android:background="@drawable/edit_text_shape"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
                             android:enabled="false"
-                            android:inputType="number"
-                            android:padding="8dp"
-                            android:paddingStart="12dp"
-                            android:text="13579" />
-                    </LinearLayout>
+                            android:text="13579"
+                            android:layout_weight="4"
+                            android:hint="Port Number"
+                            android:inputType="text"
+                            android:paddingStart="12dp" />
 
-                    <LinearLayout
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/protocol_text_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
                         android:layout_margin="8dp"
-                        android:orientation="vertical">
+                        app:boxCornerRadiusTopStart="8dp"
+                        android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/protocol_textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="8"
-                            android:padding="8dp"
-                            android:text="Protocol:" />
-
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/protocol_editText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="4"
-                            android:background="@drawable/edit_text_shape"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
                             android:enabled="false"
+                            android:text="https"
+                            android:layout_weight="4"
+                            android:hint="Protocol"
                             android:inputType="text"
-                            android:padding="8dp"
-                            android:paddingStart="12dp"
-                            android:text="https" />
-                    </LinearLayout>
+                            android:paddingStart="12dp" />
 
-                    <LinearLayout
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/hostServer_text_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
                         android:layout_margin="8dp"
-                        android:orientation="vertical">
+                        app:boxCornerRadiusTopStart="8dp"
+                        android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/hostserver_textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="8"
-                            android:padding="8dp"
-                            android:text="Host server:" />
-
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/hostserver_editText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
                             android:layout_weight="4"
-                            android:background="@drawable/edit_text_shape"
                             android:enabled="false"
-                            android:inputType="textWebEditText"
-                            android:padding="8dp"
-                            android:paddingStart="12dp"
-                            android:text="48.metaweave.co.za" />
-                    </LinearLayout>
+                            android:text="48.metaweave.co.za"
+                            android:hint="Host server"
+                            android:inputType="text"
+                            android:paddingStart="12dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
 
                     <TextView
                         android:id="@+id/advanced_textView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
-                        android:text="ADVANCED"
+                        android:text="Advanced"
+                        android:visibility="gone"
                         android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:visibility="gone" />
+                        android:textSize="12sp" />
 
                     <View
                         android:id="@+id/advancedHorizontal_view"
@@ -263,122 +273,125 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/server_linearlayout" />
 
-
-                    <LinearLayout
-                        android:id="@+id/loginPath_linearLayout"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/loginPath_text_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        android:visibility="gone"
                         android:layout_margin="8dp"
-                        android:orientation="vertical"
-                        android:visibility="gone">
+                        app:boxCornerRadiusTopStart="8dp"
+                        android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/loginPath_textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="8"
-                            android:padding="8dp"
-                            android:text="login Path:" />
-
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/loginPath_editText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            android:visibility="gone"
+                            android:singleLine="true"
                             android:layout_weight="4"
-                            android:background="@drawable/edit_text_shape"
-                            android:enabled="true"
-                            android:inputType="textWebEditText"
-                            android:padding="8dp"
-                            android:paddingStart="12dp"
-                            android:text="/api/jwt/login" />
-                    </LinearLayout>
+                            android:hint="Login path"
+                            android:text="/api/jwt/login"
+                            android:inputType="text"
+                            android:paddingStart="12dp" />
 
-                    <LinearLayout
-                        android:id="@+id/logoutPath_linearLayout"
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/logoutPath_text_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        android:visibility="gone"
                         android:layout_margin="8dp"
-                        android:orientation="vertical"
-                        android:visibility="gone">
+                        app:boxCornerRadiusTopStart="8dp"
+                        android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/logoutPath_textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="8"
-                            android:padding="8dp"
-                            android:text="logout Path:" />
-
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/logoutPath_editText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:visibility="gone"
                             android:layout_weight="4"
-                            android:background="@drawable/edit_text_shape"
-                            android:enabled="true"
-                            android:inputType="textWebEditText"
-                            android:padding="8dp"
-                            android:paddingStart="12dp"
-                            android:text="/api/jwt/logout" />
-                    </LinearLayout>
+                            android:text="/api/jwt/logout"
+                            android:hint="Logout path"
+                            android:inputType="text"
+                            android:paddingStart="12dp" />
 
-                    <LinearLayout
-                        android:id="@+id/versionPath_linearLayout"
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/versionPath_text_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
                         android:layout_margin="8dp"
-                        android:orientation="vertical"
-                        android:visibility="gone">
+                        android:visibility="gone"
+                        app:boxCornerRadiusTopStart="8dp"
+                        android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/versionPath_textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="8"
-                            android:padding="8dp"
-                            android:text="Version Path:" />
-
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/versionPath_editText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="/api/arsys/v1"
+                            android:visibility="gone"
                             android:layout_weight="4"
-                            android:background="@drawable/edit_text_shape"
-                            android:enabled="true"
-                            android:inputType="textWebEditText"
-                            android:padding="8dp"
-                            android:paddingStart="12dp"
-                            android:text="/api/arsys/v1" />
-                    </LinearLayout>
+                            android:hint="Version path"
+                            android:inputType="text"
+                            android:paddingStart="12dp" />
 
-                    <LinearLayout
-                        android:id="@+id/prefix_linearLayout"
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/prefix_text_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        android:visibility="gone"
+                        android:layout_marginBottom="12dp"
                         android:layout_margin="8dp"
-                        android:orientation="vertical"
-                        android:visibility="gone">
+                        app:boxCornerRadiusTopStart="8dp"
+                        android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/prefix_textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="8"
-                            android:padding="8dp"
-                            android:text="Prefix:" />
-
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/prefix_editText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
                             android:layout_weight="4"
-                            android:background="@drawable/edit_text_shape"
-                            android:enabled="true"
-                            android:inputType="textWebEditText"
-                            android:padding="8dp"
-                            android:paddingStart="12dp"
-                            android:text="AR-JWT" />
-                    </LinearLayout>
+                            android:hint="Prefix"
+                            android:text="AR-JWT"
+                            android:visibility="gone"
+                            android:inputType="text"
+                            android:paddingStart="12dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+
                 </LinearLayout>
             </ScrollView>
         </androidx.constraintlayout.widget.ConstraintLayout>

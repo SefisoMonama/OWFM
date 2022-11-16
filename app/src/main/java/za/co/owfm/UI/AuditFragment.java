@@ -81,6 +81,7 @@ public class AuditFragment extends Fragment {
             //tagNumberScan();
         });
 
+        binding.ticketNumberEditText.setBackgroundResource(R.color.white);
     }
 
 

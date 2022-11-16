@@ -68,7 +68,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="8dp"
                     android:orientation="vertical"
                     android:layout_marginBottom="8dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -105,6 +105,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_weight="4"
+                            android:drawablePadding="8dp"
+                            android:drawableStart="@drawable/owfm_barcode_scanner"
                             android:background="@drawable/audit_edit_text"
                             android:inputType="text"
                             android:padding="8dp"
@@ -137,122 +139,127 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_weight="4"
+                            android:drawablePadding="8dp"
+                            android:drawableStart="@drawable/owfm_barcode_scanner"
                             android:background="@drawable/audit_edit_text"
                             android:inputType="text"
                             android:padding="8dp"
-                            android:paddingStart="12dp" />
+                            android:paddingStart="12dp"/>
                     </LinearLayout>
 
 
-                    <LinearLayout
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/product_text_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        android:layout_marginBottom="12dp"
+                        app:boxCornerRadiusTopEnd="8dp"
                         android:layout_margin="8dp"
-                        android:orientation="vertical">
+                        app:boxCornerRadiusTopStart="8dp"
+                        android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/product_textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="8"
-                            android:hint="Product:"
-                            android:padding="8dp"
-                            android:textColor="@color/black"
-                            android:textStyle="bold" />
-
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/product_editText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
                             android:layout_weight="4"
-                            android:background="@drawable/audit_edit_text"
+                            android:hint="Product"
                             android:inputType="text"
-                            android:padding="8dp"
                             android:paddingStart="12dp" />
-                    </LinearLayout>
 
-                    <LinearLayout
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/floor_text_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        android:layout_marginBottom="12dp"
+                        app:boxCornerRadiusTopEnd="8dp"
                         android:layout_margin="8dp"
-                        android:orientation="vertical">
+                        app:boxCornerRadiusTopStart="8dp"
+                        android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/floor_textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="8"
-                            android:hint="Floor:"
-                            android:padding="8dp"
-                            android:textColor="@color/black"
-                            android:textStyle="bold" />
-
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/floor_editText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
                             android:layout_weight="4"
-                            android:background="@drawable/audit_edit_text"
+                            android:hint="floor"
                             android:inputType="text"
-                            android:padding="8dp"
                             android:paddingStart="12dp" />
-                    </LinearLayout>
+
+                    </com.google.android.material.textfield.TextInputLayout>
 
 
-                    <LinearLayout
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/room_text_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        android:layout_marginBottom="12dp"
+                        app:boxCornerRadiusTopEnd="8dp"
                         android:layout_margin="8dp"
-                        android:orientation="vertical">
+                        app:boxCornerRadiusTopStart="8dp"
+                        android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/room_textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="8"
-                            android:hint="Room:"
-                            android:padding="8dp"
-                            android:textColor="@color/black"
-                            android:textStyle="bold" />
-
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/room_editText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
                             android:layout_weight="4"
-                            android:background="@drawable/audit_edit_text"
+                            android:hint="Room"
                             android:inputType="text"
-                            android:padding="8dp"
                             android:paddingStart="12dp" />
-                    </LinearLayout>
 
-                    <LinearLayout
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/notes_text_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:orientation="vertical">
+                        android:layout_marginBottom="12dp"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusTopStart="8dp">
 
-                        <TextView
-                            android:id="@+id/notes_textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="8"
-                            android:hint="Notes:"
-                            android:padding="8dp"
-                            android:textColor="@color/black"
-                            android:textStyle="bold" />
-
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/notes_editText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
                             android:layout_weight="4"
-                            android:background="@drawable/audit_edit_text"
-                            android:hint="[Notes]:"
+                            android:gravity="center_vertical"
+                            android:hint="[Notes]"
                             android:inputType="text"
-                            android:padding="8dp"
-                            android:paddingStart="12dp" />
-                    </LinearLayout>
+                            android:paddingStart="12dp"
+                            android:singleLine="true"
+                            android:textStyle="italic" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
 
                     <LinearLayout
                         android:layout_width="match_parent"

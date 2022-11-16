@@ -174,12 +174,12 @@ public class RemedySettingsFragment extends Fragment {
         if (!username.isEmpty() && !password.isEmpty() && password.length() >= 8 && !port.isEmpty() && !server.isEmpty() && !protocol.isEmpty() && !hostServer.isEmpty()) {
             DatabaseClass databaseClass = DatabaseClass.getDB(requireActivity());
             databaseClass.profileDao().insertAllData(
-                  new Profile(username, password, server, port, protocol, hostServer, loginPath, logoutPath, versionPath, prefix, jwt)
-           );
+                    new Profile(username, password, server, port, protocol, hostServer, loginPath, logoutPath, versionPath, prefix, jwt)
+            );
 
             Toast.makeText(getActivity(), "Profile info successfully saved!", Toast.LENGTH_SHORT).show();
             dialog("Profile successfully saved!", "Your profile info was successfully saved and synced.", "CONTINUE");
-        }else{
+        } else {
             Toast.makeText(getActivity(), "Profile info successfully saved!", Toast.LENGTH_SHORT).show();
             dialog("Profile failed!", "Profile info couldn't be saved/synced.", "Ok");
         }
@@ -199,22 +199,30 @@ public class RemedySettingsFragment extends Fragment {
     private void displayAdvancedSettings() {
         binding.advancedTextView.setVisibility(View.VISIBLE);
         binding.advancedHorizontalView.setVisibility(View.VISIBLE);
-        binding.loginPathLinearLayout.setVisibility(View.VISIBLE);
-        binding.logoutPathLinearLayout.setVisibility(View.VISIBLE);
-        binding.versionPathLinearLayout.setVisibility(View.VISIBLE);
-        binding.prefixLinearLayout.setVisibility(View.VISIBLE);
+        binding.loginPathEditText.setVisibility(View.VISIBLE);
+        binding.logoutPathEditText.setVisibility(View.VISIBLE);
+        binding.versionPathEditText.setVisibility(View.VISIBLE);
+        binding.prefixEditText.setVisibility(View.VISIBLE);
+        binding.loginPathTextInputLayout.setVisibility(View.VISIBLE);
+        binding.logoutPathTextInputLayout.setVisibility(View.VISIBLE);
+        binding.versionPathTextInputLayout.setVisibility(View.VISIBLE);
+        binding.prefixTextInputLayout.setVisibility(View.VISIBLE);
     }
 
     private void hideAdvancedSettings() {
         binding.advancedTextView.setVisibility(View.GONE);
         binding.advancedHorizontalView.setVisibility(View.GONE);
-        binding.loginPathLinearLayout.setVisibility(View.GONE);
-        binding.logoutPathLinearLayout.setVisibility(View.GONE);
-        binding.versionPathLinearLayout.setVisibility(View.GONE);
-        binding.prefixLinearLayout.setVisibility(View.GONE);
+        binding.loginPathEditText.setVisibility(View.GONE);
+        binding.logoutPathEditText.setVisibility(View.GONE);
+        binding.versionPathEditText.setVisibility(View.GONE);
+        binding.prefixEditText.setVisibility(View.GONE);
+        binding.loginPathTextInputLayout.setVisibility(View.GONE);
+        binding.logoutPathTextInputLayout.setVisibility(View.GONE);
+        binding.versionPathTextInputLayout.setVisibility(View.GONE);
+        binding.prefixTextInputLayout.setVisibility(View.GONE);
     }
 
-    private void dialog (String title, String message, String positiveButton){
+    private void dialog(String title, String message, String positiveButton) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle(title);
         builder.setMessage(message);

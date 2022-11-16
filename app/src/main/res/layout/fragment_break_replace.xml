@@ -78,30 +78,31 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.5">
 
-                    <LinearLayout
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ticketNumber_text_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
                         android:layout_margin="8dp"
-                        android:orientation="vertical">
+                        app:boxCornerRadiusTopStart="8dp"
+                        android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/ticketNumber_textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="8"
-                            android:padding="8dp"
-                            android:text="Ticket Number" />
-
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/ticketNumber_editText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
                             android:layout_weight="4"
-                            android:background="@drawable/audit_edit_text"
+                            android:hint="Tag Number"
                             android:inputType="text"
-                            android:padding="8dp"
                             android:paddingStart="12dp" />
-                    </LinearLayout>
+
+                    </com.google.android.material.textfield.TextInputLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -128,6 +129,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_weight="4"
+                            android:drawablePadding="8dp"
+                            android:drawableStart="@drawable/owfm_barcode_scanner"
                             android:background="@drawable/audit_edit_text"
                             android:inputType="text"
                             android:padding="8dp"
@@ -159,6 +162,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_weight="4"
+                            android:drawablePadding="8dp"
+                            android:drawableStart="@drawable/owfm_barcode_scanner"
                             android:background="@drawable/audit_edit_text"
                             android:inputType="text"
                             android:padding="8dp"
@@ -191,6 +196,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_weight="4"
+                            android:drawablePadding="8dp"
+                            android:drawableStart="@drawable/owfm_barcode_scanner"
                             android:background="@drawable/audit_edit_text"
                             android:inputType="text"
                             android:padding="8dp"
@@ -198,33 +205,34 @@
                     </LinearLayout>
 
 
-                    <LinearLayout
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/notes_text_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        android:layout_marginBottom="12dp"
+                        app:boxCornerRadiusTopEnd="8dp"
                         android:layout_margin="8dp"
-                        android:orientation="vertical">
+                        app:boxCornerRadiusTopStart="8dp"
+                        android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/notes_textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="8"
-                            android:hint="Notes:"
-                            android:padding="8dp"
-                            android:textColor="@color/black"
-                            android:textStyle="bold" />
-
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/notes_editText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
                             android:layout_weight="4"
-                            android:background="@drawable/audit_edit_text"
-                            android:hint="[Notes]:"
+                            android:hint="[Notes]"
+                            android:textStyle="italic"
                             android:inputType="text"
-                            android:padding="8dp"
                             android:paddingStart="12dp" />
-                    </LinearLayout>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
                 </LinearLayout>
             </ScrollView>
 

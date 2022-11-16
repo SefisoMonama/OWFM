@@ -28,8 +28,8 @@
 
     <ImageView
         android:id="@+id/metaWeave_imageView"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_marginTop="12dp"
         android:src="@drawable/metaweave_logo"
         app:layout_constraintEnd_toEndOf="@id/applicationSettings_toolbar"
@@ -58,26 +58,34 @@
             app:menu="@menu/bottom_nav_menu" />
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:elevation="16dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:cardCornerRadius="16dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNav_linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/metaWeave_imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/metaWeave_imageView"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Application Settings"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNav_linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/metaWeave_imageView" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardView_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

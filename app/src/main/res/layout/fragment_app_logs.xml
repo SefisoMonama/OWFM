@@ -14,7 +14,6 @@
         android:layout_marginStart="8dp"
         android:text="Clear"
         android:textColor="@color/white"
-        android:background="@drawable/btn_round_corners_shape"
         app:layout_constraintBottom_toBottomOf="@+id/refreshLogs_button"
         app:layout_constraintStart_toEndOf="@+id/refreshLogs_button"
         app:layout_constraintTop_toTopOf="@+id/refreshLogs_button" />
@@ -28,15 +27,15 @@
         android:elevation="10dp"
         android:minHeight="?attr/actionBarSize"
         android:textAlignment="center"
+        android:theme="?attr/actionBarTheme"
         app:contentInsetLeft="0dp"
         app:contentInsetStart="0dp"
         app:contentInsetStartWithNavigation="0dp"
-        android:theme="?attr/actionBarTheme"
-        app:titleTextAppearance="@style/Toolbar.TitleText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="App Logs" />
+        app:title="App Logs"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
 
     <ImageView
         android:id="@+id/metaWeave_imageView"
@@ -51,18 +50,19 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView3"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="0dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="12dp"
         android:background="@color/white"
         app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/refreshLogs_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/errorLogs_textView"
         app:layout_constraintTop_toBottomOf="@+id/errorLogs_textView"
         app:strokeColor="@color/black"
-        app:strokeWidth="2dp">
+        app:strokeWidth="1dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -74,10 +74,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-
                 android:layout_marginTop="16dp"
                 android:text="No logs found!"
-                android:textColor="@color/lightGrey"
+                android:textColor="@color/red"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -108,10 +107,10 @@
         android:id="@+id/errorLogs_textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Error Logs:"
+        android:layout_marginTop="8dp"
         android:paddingStart="12dp"
-        android:layout_marginStart="24dp"
+        android:text="Error Logs:"
+        android:textAlignment="center"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -121,11 +120,9 @@
         android:id="@+id/refreshLogs_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/btn_round_corners_shape"
         android:text="Refresh"
         android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="@+id/materialCardView3"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView3" />
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav_linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/materialCardView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
